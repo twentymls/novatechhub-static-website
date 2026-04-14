@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Servizi — NovaTechHub</title>
+    <meta name="description" content="Scopri i nostri servizi: sviluppo web, app mobile, software gestionali e consulenza tecnologica.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="/css/tailwind.css">
+  </head>
+
+  <body class="bg-surface-dark text-text-primary font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-surface-dark/80 backdrop-blur-lg border-b border-slate-800/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <a href="/" class="text-xl font-bold tracking-tight text-white">NovaTech<span class="text-accent-400">Hub</span></a>
+          <div class="hidden lg:flex items-center gap-8">
+            <a href="/#services" class="text-sm text-slate-300 hover:text-white transition-colors">Servizi</a>
+            <a href="/#projects" class="text-sm text-slate-300 hover:text-white transition-colors">Portfolio</a>
+            <a href="/#about" class="text-sm text-slate-300 hover:text-white transition-colors">Chi siamo</a>
+            <a href="/#methodology" class="text-sm text-slate-300 hover:text-white transition-colors">Metodo</a>
+            <a href="/#blog" class="text-sm text-slate-300 hover:text-white transition-colors">Blog</a>
+            <a href="/#contact"
+                  class="inline-flex items-center gap-2 px-6 py-2.5 border border-white/30 rounded-full text-sm text-white hover:bg-white hover:text-slate-900 transition-all duration-300">
+              Contattaci
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+          <button id="navbar-toggle" class="lg:hidden p-2 text-slate-300 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-overlay" class="fixed inset-0 bg-black/60 z-40 hidden lg:hidden"></div>
+      <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 bg-surface-darker z-50 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
+        <div class="flex items-center justify-between p-6 border-b border-slate-800">
+          <span class="text-lg font-bold text-white">NovaTech<span class="text-accent-400">Hub</span></span>
+          <button data-navbar-close class="p-2 text-slate-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-col gap-1 p-6">
+          <a href="/#services" class="block py-3 text-lg text-slate-300 hover:text-white transition-colors">Servizi</a>
+          <a href="/#projects" class="block py-3 text-lg text-slate-300 hover:text-white transition-colors">Portfolio</a>
+          <a href="/#about" class="block py-3 text-lg text-slate-300 hover:text-white transition-colors">Chi siamo</a>
+          <a href="/#methodology" class="block py-3 text-lg text-slate-300 hover:text-white transition-colors">Metodo</a>
+          <a href="/#blog" class="block py-3 text-lg text-slate-300 hover:text-white transition-colors">Blog</a>
+          <div class="pt-4 mt-4 border-t border-slate-800">
+            <a href="/#contact"
+                  class="inline-flex items-center justify-center gap-2 w-full px-6 py-3 border border-white/30 rounded-full text-white hover:bg-white hover:text-slate-900 transition-all duration-300">
+              Contattaci
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+
+      <!-- Services Listing -->
+      <section class="bg-surface-dark pt-28 pb-24 lg:pb-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <nav aria-label="Breadcrumb" class="mb-8">
+            <ol class="flex items-center gap-2 text-sm text-text-muted">
+              <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+              <li aria-hidden="true" class="text-slate-600">/</li>
+              <li><span class="text-text-secondary">Servizi</span></li>
+            </ol>
+          </nav>
+
+          <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight">I nostri servizi</h1>
+            <p class="mt-6 text-lg text-text-secondary max-w-2xl leading-relaxed">Soluzioni digitali complete, dalla strategia allo sviluppo.</p>
+          </div>
+
+          <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Service 1: Sviluppo Web -->
+            <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700 h-full">
+              <a href="/services/sviluppo-web.html" class="group flex flex-col h-full p-8 bg-surface-card rounded-2xl border border-slate-700/50 hover:border-accent-500/50 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-accent-500/10 text-accent-400 mb-6">
+                  <span class="text-2xl">&#127760;</span>
+                </div>
+                <h3 class="text-xl font-bold text-white group-hover:text-accent-400 transition-colors">Sviluppo Web</h3>
+                <p class="mt-1 text-sm text-accent-400">Siti web e web app performanti e scalabili</p>
+                <p class="mt-4 text-text-secondary text-sm leading-relaxed line-clamp-3">Progettiamo e sviluppiamo siti web e applicazioni web performanti, responsive e ottimizzate SEO. Architetture scalabili, UX curata e integrazioni con i tuoi sistemi esistenti.</p>
+                <div class="mt-auto pt-6 inline-flex items-center gap-2 text-sm text-accent-400 group-hover:gap-3 transition-all">
+                  Scopri di pi&ugrave;
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </div>
+              </a>
+            </div>
+
+            <!-- Service 2: App Mobile -->
+            <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700 h-full">
+              <a href="/services/app-mobile.html" class="group flex flex-col h-full p-8 bg-surface-card rounded-2xl border border-slate-700/50 hover:border-accent-500/50 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-accent-500/10 text-accent-400 mb-6">
+                  <span class="text-2xl">&#128241;</span>
+                </div>
+                <h3 class="text-xl font-bold text-white group-hover:text-accent-400 transition-colors">App Mobile</h3>
+                <p class="mt-1 text-sm text-accent-400">App native e cross-platform ad alte prestazioni</p>
+                <p class="mt-4 text-text-secondary text-sm leading-relaxed line-clamp-3">Sviluppiamo applicazioni mobile per iOS e Android con focus su performance e user experience. Soluzioni native o cross-platform, integrate con API e servizi cloud.</p>
+                <div class="mt-auto pt-6 inline-flex items-center gap-2 text-sm text-accent-400 group-hover:gap-3 transition-all">
+                  Scopri di pi&ugrave;
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </div>
+              </a>
+            </div>
+
+            <!-- Service 3: Software Gestionali -->
+            <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700 h-full">
+              <a href="/services/software-gestionali.html" class="group flex flex-col h-full p-8 bg-surface-card rounded-2xl border border-slate-700/50 hover:border-accent-500/50 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-accent-500/10 text-accent-400 mb-6">
+                  <span class="text-2xl">&#9881;&#65039;</span>
+                </div>
+                <h3 class="text-xl font-bold text-white group-hover:text-accent-400 transition-colors">Software Gestionali</h3>
+                <p class="mt-1 text-sm text-accent-400">Digitalizza e automatizza i tuoi processi</p>
+                <p class="mt-4 text-text-secondary text-sm leading-relaxed line-clamp-3">Creiamo software gestionali personalizzati per automatizzare i processi aziendali. Dashboard real-time, report avanzati e integrazioni con ERP, CRM e strumenti di terze parti.</p>
+                <div class="mt-auto pt-6 inline-flex items-center gap-2 text-sm text-accent-400 group-hover:gap-3 transition-all">
+                  Scopri di pi&ugrave;
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </div>
+              </a>
+            </div>
+
+            <!-- Service 4: Consulenza Tech -->
+            <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700 h-full">
+              <a href="/services/consulenza-tech.html" class="group flex flex-col h-full p-8 bg-surface-card rounded-2xl border border-slate-700/50 hover:border-accent-500/50 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-accent-500/10 text-accent-400 mb-6">
+                  <span class="text-2xl">&#128161;</span>
+                </div>
+                <h3 class="text-xl font-bold text-white group-hover:text-accent-400 transition-colors">Consulenza Tech</h3>
+                <p class="mt-1 text-sm text-accent-400">Strategia, architettura e AI per il tuo business</p>
+                <p class="mt-4 text-text-secondary text-sm leading-relaxed line-clamp-3">Ti aiutiamo a scegliere le tecnologie giuste e a integrare soluzioni AI nel tuo workflow. Audit tecnici, architettura software, formazione del team e supporto strategico.</p>
+                <div class="mt-auto pt-6 inline-flex items-center gap-2 text-sm text-accent-400 group-hover:gap-3 transition-all">
+                  Scopri di pi&ugrave;
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </div>
+              </a>
+            </div>
+
+            <!-- Service 5: Digital Marketing & ADV -->
+            <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700 h-full">
+              <a href="/services/digital-marketing-adv.html" class="group flex flex-col h-full p-8 bg-surface-card rounded-2xl border border-slate-700/50 hover:border-accent-500/50 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-accent-500/10 text-accent-400 mb-6">
+                  <span class="text-2xl">&#128200;</span>
+                </div>
+                <h3 class="text-xl font-bold text-white group-hover:text-accent-400 transition-colors">Digital Marketing &amp; ADV</h3>
+                <p class="mt-1 text-sm text-accent-400">Campagne data-driven per far crescere il tuo business</p>
+                <p class="mt-4 text-text-secondary text-sm leading-relaxed line-clamp-3">Gestiamo campagne su Meta, Google e LinkedIn con un approccio basato sui dati. Funnel di acquisizione, landing page ottimizzate, lead generation e creativit&agrave; guidata dalle performance.</p>
+                <div class="mt-auto pt-6 inline-flex items-center gap-2 text-sm text-accent-400 group-hover:gap-3 transition-all">
+                  Scopri di pi&ugrave;
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </div>
+              </a>
+            </div>
+
+            <!-- Service 6: Analytics & Tracking -->
+            <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700 h-full">
+              <a href="/services/analytics-tracking.html" class="group flex flex-col h-full p-8 bg-surface-card rounded-2xl border border-slate-700/50 hover:border-accent-500/50 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-accent-500/10 text-accent-400 mb-6">
+                  <span class="text-2xl">&#128202;</span>
+                </div>
+                <h3 class="text-xl font-bold text-white group-hover:text-accent-400 transition-colors">Analytics &amp; Tracking</h3>
+                <p class="mt-1 text-sm text-accent-400">Misura, analizza, ottimizza ogni touchpoint</p>
+                <p class="mt-4 text-text-secondary text-sm leading-relaxed line-clamp-3">Configuriamo GA4, Google Tag Manager, eventi custom e Conversion API per darti il controllo completo sui dati. Dashboard su misura per decisioni basate su numeri reali.</p>
+                <div class="mt-auto pt-6 inline-flex items-center gap-2 text-sm text-accent-400 group-hover:gap-3 transition-all">
+                  Scopri di pi&ugrave;
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-darker border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div class="lg:col-span-1">
+            <a href="/" class="text-xl font-bold tracking-tight text-white">NovaTech<span class="text-accent-400">Hub</span></a>
+            <p class="mt-4 text-sm text-text-secondary leading-relaxed">Progettiamo e sviluppiamo soluzioni digitali su misura per aziende che vogliono crescere.</p>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Azienda</h4>
+            <ul class="space-y-3">
+              <li><a href="/about.html" class="text-sm text-text-secondary hover:text-white transition-colors">Chi siamo</a></li>
+              <li><a href="/methodology.html" class="text-sm text-text-secondary hover:text-white transition-colors">Metodo</a></li>
+              <li><a href="/contact.html" class="text-sm text-text-secondary hover:text-white transition-colors">Contattaci</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Servizi</h4>
+            <ul class="space-y-3">
+              <li><a href="/services/sviluppo-web.html" class="text-sm text-text-secondary hover:text-white transition-colors">Sviluppo Web</a></li>
+              <li><a href="/services/app-mobile.html" class="text-sm text-text-secondary hover:text-white transition-colors">App Mobile</a></li>
+              <li><a href="/services/software-gestionali.html" class="text-sm text-text-secondary hover:text-white transition-colors">Software Gestionali</a></li>
+              <li><a href="/services/consulenza-tech.html" class="text-sm text-text-secondary hover:text-white transition-colors">Consulenza Tech</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Risorse</h4>
+            <ul class="space-y-3">
+              <li><a href="/blog/" class="text-sm text-text-secondary hover:text-white transition-colors">Blog</a></li>
+              <li><a href="/projects/" class="text-sm text-text-secondary hover:text-white transition-colors">Portfolio</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-xs text-text-muted">&copy; 2026 NovaTechHub. Tutti i diritti riservati.</p>
+          <div class="flex items-center gap-6">
+            <span class="text-xs text-text-muted">P.IVA: 00000000000</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>
