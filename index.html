@@ -486,7 +486,7 @@
                   </div>
                   <div>
                     <p class="text-sm font-medium text-text-muted uppercase tracking-wider">Sede</p>
-                    <p class="mt-1 text-white">Via Alcide De Gasperi, 53 - Palermo, Italia</p>
+                    <a href="https://maps.app.goo.gl/D9M8NdSqWN32WNGY7" target="_blank" rel="noopener noreferrer" class="mt-1 text-white hover:text-accent-400 transition-colors">Via Alcide De Gasperi, 53 - Palermo, Italia</a>
                   </div>
                 </div>
               </div>
@@ -539,6 +539,13 @@
                     <label for="message" class="block text-sm font-medium text-text-secondary mb-2">Messaggio *</label>
                     <textarea name="message" id="message" required rows="5" placeholder="Raccontaci il tuo progetto..."
                             class="w-full px-4 py-3 bg-surface-card border border-slate-700 rounded-xl text-white placeholder-text-muted focus:border-accent-500 focus:ring-1 focus:ring-accent-500 focus:outline-none transition-colors resize-none"></textarea>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <input type="checkbox" name="privacy" id="privacy" required
+                           class="mt-1 w-4 h-4 rounded border-slate-700 bg-surface-card text-accent-500 focus:ring-accent-500 focus:ring-offset-0 cursor-pointer">
+                    <label for="privacy" class="text-sm text-text-secondary leading-relaxed cursor-pointer">
+                      Ho letto e accetto la <a href="/privacy-policy.html" target="_blank" class="text-accent-400 hover:text-accent-300 underline transition-colors">Privacy Policy</a> *
+                    </label>
                   </div>
                   <div>
                     <button type="submit"
