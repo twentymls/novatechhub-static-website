@@ -6,7 +6,16 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <title>Blog — NovaTechHub</title>
-    <meta name="description" content="Articoli, guide e risorse su sviluppo web, tecnologia e innovazione digitale.">
+    <meta name="description" content="Articoli, guide e risorse su sviluppo web, digital marketing, AI e innovazione digitale per aziende e PMI.">
+    <link rel="canonical" href="https://www.novatechhub.it/blog/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog — NovaTechHub">
+    <meta property="og:description" content="Articoli, guide e risorse su sviluppo web, digital marketing, AI e innovazione digitale per aziende e PMI.">
+    <meta property="og:url" content="https://www.novatechhub.it/blog/">
+    <meta property="og:locale" content="it_IT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Blog — NovaTechHub">
+    <meta name="twitter:description" content="Articoli, guide e risorse su sviluppo web, digital marketing, AI e innovazione digitale.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -25,7 +34,6 @@
           <a href="/" class="text-xl font-bold tracking-tight text-white">NovaTech<span class="text-accent-400">Hub</span></a>
           <div class="hidden lg:flex items-center gap-8">
             <a href="/#services" class="text-sm text-slate-300 hover:text-white transition-colors">Servizi</a>
-            <a href="/#projects" class="text-sm text-slate-300 hover:text-white transition-colors">Portfolio</a>
             <a href="/#about" class="text-sm text-slate-300 hover:text-white transition-colors">Chi siamo</a>
             <a href="/#methodology" class="text-sm text-slate-300 hover:text-white transition-colors">Metodo</a>
             <a href="/#blog" class="text-sm text-slate-300 hover:text-white transition-colors">Blog</a>
@@ -54,7 +62,6 @@
         </div>
         <div class="flex flex-col gap-1 p-6">
           <a href="/#services" class="block py-3 text-lg text-slate-300 hover:text-white transition-colors">Servizi</a>
-          <a href="/#projects" class="block py-3 text-lg text-slate-300 hover:text-white transition-colors">Portfolio</a>
           <a href="/#about" class="block py-3 text-lg text-slate-300 hover:text-white transition-colors">Chi siamo</a>
           <a href="/#methodology" class="block py-3 text-lg text-slate-300 hover:text-white transition-colors">Metodo</a>
           <a href="/#blog" class="block py-3 text-lg text-slate-300 hover:text-white transition-colors">Blog</a>
@@ -91,27 +98,156 @@
             <a href="/blog/categories/sviluppo.html" class="px-5 py-2 rounded-full text-sm font-medium bg-surface-card border border-slate-700/50 text-text-secondary hover:text-white transition-colors">Sviluppo</a>
             <a href="/blog/categories/design.html" class="px-5 py-2 rounded-full text-sm font-medium bg-surface-card border border-slate-700/50 text-text-secondary hover:text-white transition-colors">Design</a>
             <a href="/blog/categories/business.html" class="px-5 py-2 rounded-full text-sm font-medium bg-surface-card border border-slate-700/50 text-text-secondary hover:text-white transition-colors">Business</a>
+            <a href="/blog/categories/marketing.html" class="px-5 py-2 rounded-full text-sm font-medium bg-surface-card border border-slate-700/50 text-text-secondary hover:text-white transition-colors">Marketing</a>
           </div>
 
           <!-- Articles grid -->
           <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Article card -->
+
+            <!-- Article: UX Design E-commerce (14 Apr) -->
             <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700">
-              <a href="/blog/perche-rails-8-e-la-scelta-giusta-per-il-tuo-progetto.html" class="group block">
+              <a href="/blog/ux-design-ecommerce-aumentare-conversioni.html" class="group block">
                 <div class="aspect-[16/9] rounded-xl overflow-hidden bg-surface-card mb-4">
-                  <div class="w-full h-full flex items-center justify-center text-text-muted">
-                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
-                  </div>
+                  <img src="/images/blog/ux-design-ecommerce-aumentare-conversioni.svg" alt="Principi di UX design per e-commerce" class="w-full h-full object-cover">
+                </div>
+                <div class="flex items-center gap-3 text-xs text-text-muted mb-2">
+                  <span class="text-accent-400">Design</span>
+                  <span>&middot;</span>
+                  <span>8 min</span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-accent-400 transition-colors leading-snug">UX design per e-commerce: 10 principi per aumentare le conversioni</h3>
+                <p class="mt-2 text-sm text-text-secondary line-clamp-2">10 principi di UX design per e-commerce che aumentano le conversioni: dalla navigazione al checkout.</p>
+              </a>
+            </div>
+
+            <!-- Article: Configurare GA4 (10 Apr) -->
+            <div data-scroll-reveal data-scroll-reveal-delay="100" class="opacity-0 translate-y-8 transition-all duration-700">
+              <a href="/blog/configurare-ga4-google-tag-manager-guida.html" class="group block">
+                <div class="aspect-[16/9] rounded-xl overflow-hidden bg-surface-card mb-4">
+                  <img src="/images/blog/configurare-ga4-google-tag-manager-guida.svg" alt="Guida alla configurazione di GA4 e Google Tag Manager" class="w-full h-full object-cover">
+                </div>
+                <div class="flex items-center gap-3 text-xs text-text-muted mb-2">
+                  <span class="text-accent-400">Marketing</span>
+                  <span>&middot;</span>
+                  <span>9 min</span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-accent-400 transition-colors leading-snug">Configurare GA4 e Google Tag Manager: la guida definitiva</h3>
+                <p class="mt-2 text-sm text-text-secondary line-clamp-2">Guida definitiva per configurare Google Analytics 4 e Google Tag Manager: setup, eventi e conversioni.</p>
+              </a>
+            </div>
+
+            <!-- Article: Facebook Ads vs Google Ads (7 Apr) -->
+            <div data-scroll-reveal data-scroll-reveal-delay="200" class="opacity-0 translate-y-8 transition-all duration-700">
+              <a href="/blog/facebook-ads-vs-google-ads-dove-investire.html" class="group block">
+                <div class="aspect-[16/9] rounded-xl overflow-hidden bg-surface-card mb-4">
+                  <img src="/images/blog/facebook-ads-vs-google-ads-dove-investire.svg" alt="Confronto tra Facebook Ads e Google Ads" class="w-full h-full object-cover">
+                </div>
+                <div class="flex items-center gap-3 text-xs text-text-muted mb-2">
+                  <span class="text-accent-400">Marketing</span>
+                  <span>&middot;</span>
+                  <span>8 min</span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-accent-400 transition-colors leading-snug">Facebook Ads e Google Ads a confronto: dove investire il tuo budget</h3>
+                <p class="mt-2 text-sm text-text-secondary line-clamp-2">Quale piattaforma scegliere per le tue campagne? Confronto completo su costi, targeting e formati.</p>
+              </a>
+            </div>
+
+            <!-- Article: Strategia Digital Marketing (3 Apr) -->
+            <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700">
+              <a href="/blog/strategia-digital-marketing-pmi-guida-completa.html" class="group block">
+                <div class="aspect-[16/9] rounded-xl overflow-hidden bg-surface-card mb-4">
+                  <img src="/images/blog/strategia-digital-marketing-pmi-guida-completa.svg" alt="Strategia di digital marketing per PMI" class="w-full h-full object-cover">
+                </div>
+                <div class="flex items-center gap-3 text-xs text-text-muted mb-2">
+                  <span class="text-accent-400">Marketing</span>
+                  <span>&middot;</span>
+                  <span>10 min</span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-accent-400 transition-colors leading-snug">Strategia di digital marketing per PMI: la guida completa 2026</h3>
+                <p class="mt-2 text-sm text-text-secondary line-clamp-2">Guida completa alla strategia di digital marketing per PMI: SEO, social media, advertising e email marketing.</p>
+              </a>
+            </div>
+
+            <!-- Article: AI in Azienda (31 Mar) -->
+            <div data-scroll-reveal data-scroll-reveal-delay="100" class="opacity-0 translate-y-8 transition-all duration-700">
+              <a href="/blog/come-integrare-intelligenza-artificiale-azienda.html" class="group block">
+                <div class="aspect-[16/9] rounded-xl overflow-hidden bg-surface-card mb-4">
+                  <img src="/images/blog/come-integrare-intelligenza-artificiale-azienda.svg" alt="Integrazione dell'intelligenza artificiale in azienda" class="w-full h-full object-cover">
+                </div>
+                <div class="flex items-center gap-3 text-xs text-text-muted mb-2">
+                  <span class="text-accent-400">Business</span>
+                  <span>&middot;</span>
+                  <span>9 min</span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-accent-400 transition-colors leading-snug">Come integrare l'intelligenza artificiale nella tua azienda: guida pratica</h3>
+                <p class="mt-2 text-sm text-text-secondary line-clamp-2">Guida pratica per integrare l'AI nella tua azienda: casi d'uso concreti, strumenti e strategie per PMI.</p>
+              </a>
+            </div>
+
+            <!-- Article: Software Gestionale (27 Mar) -->
+            <div data-scroll-reveal data-scroll-reveal-delay="200" class="opacity-0 translate-y-8 transition-all duration-700">
+              <a href="/blog/software-gestionale-personalizzato-vs-soluzioni-pronte.html" class="group block">
+                <div class="aspect-[16/9] rounded-xl overflow-hidden bg-surface-card mb-4">
+                  <img src="/images/blog/software-gestionale-personalizzato-vs-soluzioni-pronte.svg" alt="Software gestionale personalizzato vs soluzioni pronte" class="w-full h-full object-cover">
+                </div>
+                <div class="flex items-center gap-3 text-xs text-text-muted mb-2">
+                  <span class="text-accent-400">Business</span>
+                  <span>&middot;</span>
+                  <span>7 min</span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-accent-400 transition-colors leading-snug">Software gestionale personalizzato vs soluzioni pronte: pro e contro</h3>
+                <p class="mt-2 text-sm text-text-secondary line-clamp-2">Scopri pro e contro di entrambe le opzioni per scegliere il gestionale giusto per la tua azienda.</p>
+              </a>
+            </div>
+
+            <!-- Article: App Nativa o Cross-Platform (24 Mar) -->
+            <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700">
+              <a href="/blog/app-nativa-o-cross-platform-come-scegliere.html" class="group block">
+                <div class="aspect-[16/9] rounded-xl overflow-hidden bg-surface-card mb-4">
+                  <img src="/images/blog/app-nativa-o-cross-platform-come-scegliere.svg" alt="Confronto tra app nativa e cross-platform" class="w-full h-full object-cover">
                 </div>
                 <div class="flex items-center gap-3 text-xs text-text-muted mb-2">
                   <span class="text-accent-400">Sviluppo</span>
                   <span>&middot;</span>
-                  <span>5 min</span>
+                  <span>7 min</span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-accent-400 transition-colors leading-snug">App nativa o cross-platform: come scegliere nel 2026</h3>
+                <p class="mt-2 text-sm text-text-secondary line-clamp-2">Confronto completo tra sviluppo nativo iOS/Android e framework cross-platform come Flutter e React Native.</p>
+              </a>
+            </div>
+
+            <!-- Article: Quanto Costa un Sito Web (20 Mar) -->
+            <div data-scroll-reveal data-scroll-reveal-delay="100" class="opacity-0 translate-y-8 transition-all duration-700">
+              <a href="/blog/quanto-costa-sito-web-professionale-2026.html" class="group block">
+                <div class="aspect-[16/9] rounded-xl overflow-hidden bg-surface-card mb-4">
+                  <img src="/images/blog/quanto-costa-sito-web-professionale-2026.svg" alt="Costi per la realizzazione di un sito web professionale" class="w-full h-full object-cover">
+                </div>
+                <div class="flex items-center gap-3 text-xs text-text-muted mb-2">
+                  <span class="text-accent-400">Sviluppo</span>
+                  <span>&middot;</span>
+                  <span>8 min</span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-accent-400 transition-colors leading-snug">Quanto costa un sito web professionale nel 2026: guida completa</h3>
+                <p class="mt-2 text-sm text-text-secondary line-clamp-2">Scopri i fattori che influenzano il prezzo e come pianificare il budget per il tuo progetto web.</p>
+              </a>
+            </div>
+
+            <!-- Article: Rails 8 (15 Mar) -->
+            <div data-scroll-reveal data-scroll-reveal-delay="200" class="opacity-0 translate-y-8 transition-all duration-700">
+              <a href="/blog/perche-rails-8-e-la-scelta-giusta-per-il-tuo-progetto.html" class="group block">
+                <div class="aspect-[16/9] rounded-xl overflow-hidden bg-surface-card mb-4">
+                  <img src="/images/blog/perche-rails-8-scelta-giusta.svg" alt="Ruby on Rails 8 e le sue novit&agrave;" class="w-full h-full object-cover">
+                </div>
+                <div class="flex items-center gap-3 text-xs text-text-muted mb-2">
+                  <span class="text-accent-400">Sviluppo</span>
+                  <span>&middot;</span>
+                  <span>7 min</span>
                 </div>
                 <h3 class="text-lg font-bold text-white group-hover:text-accent-400 transition-colors leading-snug">Perch&eacute; Rails 8 &egrave; la scelta giusta per il tuo progetto</h3>
                 <p class="mt-2 text-sm text-text-secondary line-clamp-2">Scopri i vantaggi di Ruby on Rails 8 per lo sviluppo di applicazioni web moderne e performanti.</p>
               </a>
             </div>
+
           </div>
         </div>
       </section>
@@ -147,7 +283,6 @@
             <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Risorse</h4>
             <ul class="space-y-3">
               <li><a href="/blog/" class="text-sm text-text-secondary hover:text-white transition-colors">Blog</a></li>
-              <li><a href="/projects/" class="text-sm text-text-secondary hover:text-white transition-colors">Portfolio</a></li>
             </ul>
           </div>
         </div>

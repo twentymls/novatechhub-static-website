@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#0f172a"/>
+  <rect x="60" y="80" width="520" height="520" rx="20" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <rect x="60" y="80" width="520" height="50" rx="20" fill="#1e293b"/>
+  <rect x="60" y="128" width="520" height="2" fill="#334155"/>
+  <text x="320" y="110" font-family="sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Dashboard Gestionale</text>
+  <rect x="90" y="150" width="150" height="100" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="165" y="185" font-family="sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Ordini</text>
+  <text x="165" y="220" font-family="sans-serif" font-size="28" fill="#0ea5e9" text-anchor="middle" font-weight="bold">847</text>
+  <rect x="260" y="150" width="150" height="100" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="335" y="185" font-family="sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Fatturato</text>
+  <text x="335" y="220" font-family="sans-serif" font-size="24" fill="#22c55e" text-anchor="middle" font-weight="bold">124K</text>
+  <rect x="400" y="150" width="150" height="100" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="475" y="185" font-family="sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Clienti</text>
+  <text x="475" y="220" font-family="sans-serif" font-size="28" fill="#38bdf8" text-anchor="middle" font-weight="bold">312</text>
+  <rect x="90" y="270" width="460" height="180" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="120" y="300" font-family="sans-serif" font-size="12" fill="#64748b">Andamento vendite</text>
+  <polyline points="120,420 180,380 240,400 300,350 360,330 420,370 480,310 520,340" fill="none" stroke="#0ea5e9" stroke-width="2"/>
+  <polyline points="120,420 180,400 240,410 300,390 360,380 420,395 480,370 520,380" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <rect x="90" y="470" width="220" height="40" rx="8" fill="#0ea5e9" opacity="0.15"/>
+  <text x="200" y="496" font-family="sans-serif" font-size="13" fill="#38bdf8" text-anchor="middle">Su misura per te</text>
+  <rect x="330" y="470" width="220" height="40" rx="8" fill="#334155" opacity="0.5"/>
+  <text x="440" y="496" font-family="sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Esporta report</text>
+  <rect x="660" y="160" width="200" height="160" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="760" y="210" font-family="sans-serif" font-size="24" text-anchor="middle">&#9881;</text>
+  <text x="760" y="240" font-family="sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">Personalizzato</text>
+  <text x="760" y="264" font-family="sans-serif" font-size="11" fill="#0ea5e9" text-anchor="middle">100% su misura</text>
+  <rect x="660" y="360" width="200" height="160" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="760" y="410" font-family="sans-serif" font-size="24" text-anchor="middle">&#128230;</text>
+  <text x="760" y="440" font-family="sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">Pronto all'uso</text>
+  <text x="760" y="464" font-family="sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Setup rapido</text>
+  <rect x="920" y="160" width="200" height="360" rx="16" fill="#1e293b" stroke="#0ea5e9" stroke-width="1"/>
+  <text x="1020" y="200" font-family="sans-serif" font-size="14" fill="#0ea5e9" text-anchor="middle" font-weight="bold">Pro &amp; Contro</text>
+  <line x1="940" y1="216" x2="1100" y2="216" stroke="#334155" stroke-width="1"/>
+  <text x="960" y="248" font-family="sans-serif" font-size="12" fill="#22c55e">&#10003;</text>
+  <text x="980" y="248" font-family="sans-serif" font-size="11" fill="#94a3b8">Flessibilità</text>
+  <text x="960" y="278" font-family="sans-serif" font-size="12" fill="#22c55e">&#10003;</text>
+  <text x="980" y="278" font-family="sans-serif" font-size="11" fill="#94a3b8">Scalabilità</text>
+  <text x="960" y="308" font-family="sans-serif" font-size="12" fill="#22c55e">&#10003;</text>
+  <text x="980" y="308" font-family="sans-serif" font-size="11" fill="#94a3b8">Integrazioni</text>
+  <text x="960" y="348" font-family="sans-serif" font-size="12" fill="#ef4444">&#10007;</text>
+  <text x="980" y="348" font-family="sans-serif" font-size="11" fill="#94a3b8">Costo iniziale</text>
+  <text x="960" y="378" font-family="sans-serif" font-size="12" fill="#ef4444">&#10007;</text>
+  <text x="980" y="378" font-family="sans-serif" font-size="11" fill="#94a3b8">Tempi sviluppo</text>
+</svg>
