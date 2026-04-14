@@ -85,77 +85,168 @@
         </div>
       </section>
 
-      <!-- Timeline Section -->
+      <!-- Process Section -->
       <section class="bg-surface-darker py-24 lg:py-32">
+        <style>
+          .method-card-lg {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 1.25rem;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            background: linear-gradient(168deg, rgba(30, 41, 59, 0.45) 0%, rgba(15, 23, 42, 0.65) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: all 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: default;
+          }
+          .method-card-lg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(ellipse at 50% 110%, rgba(56, 189, 248, 0.045) 0%, transparent 60%);
+            pointer-events: none;
+          }
+          .method-card-lg:hover {
+            border-color: rgba(56, 189, 248, 0.18);
+            box-shadow: 0 12px 48px rgba(56, 189, 248, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+            transform: translateY(-5px);
+          }
+          .method-card-lg svg {
+            width: 46%;
+            height: 46%;
+            color: #38bdf8;
+            transition: all 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.08));
+          }
+          .method-card-lg:hover svg {
+            transform: scale(1.06);
+            filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.18));
+          }
+          .method-num-lg {
+            position: absolute;
+            top: 1rem;
+            left: 1.25rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: rgba(56, 189, 248, 0.25);
+            z-index: 1;
+            font-variant-numeric: tabular-nums;
+          }
+        </style>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700">
             <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">Le 6 fasi del nostro processo</h2>
             <p class="mt-4 text-text-secondary text-lg max-w-2xl">Un processo collaudato per trasformare le idee in prodotti concreti.</p>
           </div>
-          <div class="mt-16 relative max-w-3xl mx-auto">
-            <!-- Vertical connecting line -->
-            <div class="hidden md:block absolute left-6 top-0 bottom-0 w-px bg-slate-700"></div>
-
-            <div class="space-y-16">
-              <!-- Step 1: Ascolto -->
-              <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700 relative flex gap-8">
-                <div class="flex items-center justify-center w-12 h-12 rounded-full bg-accent-500 text-white font-bold text-lg shadow-lg shadow-accent-500/20 shrink-0 z-10">1</div>
-                <div>
-                  <div class="text-2xl mb-2">&#127919;</div>
-                  <h3 class="text-xl font-bold text-white">Ascolto</h3>
-                  <p class="mt-3 text-text-secondary leading-relaxed">Analizziamo le tue esigenze, il mercato e i tuoi obiettivi. Audit marketing, analisi competitor e definizione del perimetro progetto.</p>
-                </div>
+          <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+            <!-- Step 1: Ascolto -->
+            <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700">
+              <div class="method-card-lg">
+                <span class="method-num-lg">01</span>
+                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="30" y="10" width="20" height="30" rx="10"/>
+                  <line x1="30" y1="20" x2="50" y2="20"/>
+                  <line x1="30" y1="26" x2="50" y2="26"/>
+                  <line x1="30" y1="32" x2="50" y2="32"/>
+                  <path d="M22 32v4c0 10 8 18 18 18s18-8 18-18v-4"/>
+                  <line x1="40" y1="54" x2="40" y2="66"/>
+                  <line x1="28" y1="66" x2="52" y2="66"/>
+                </svg>
               </div>
-
-              <!-- Step 2: Strategia -->
-              <div data-scroll-reveal data-scroll-reveal-delay="100" class="opacity-0 translate-y-8 transition-all duration-700 relative flex gap-8">
-                <div class="flex items-center justify-center w-12 h-12 rounded-full bg-accent-500 text-white font-bold text-lg shadow-lg shadow-accent-500/20 shrink-0 z-10">2</div>
-                <div>
-                  <div class="text-2xl mb-2">&#128203;</div>
-                  <h3 class="text-xl font-bold text-white">Strategia</h3>
-                  <p class="mt-3 text-text-secondary leading-relaxed">Definiamo la roadmap, le tecnologie e l'architettura. Stabiliamo KPI misurabili e il piano di tracking per monitorare ogni risultato.</p>
-                </div>
+              <h3 class="text-xl font-bold text-white mt-6 mb-3">Ascolto</h3>
+              <p class="text-text-secondary leading-relaxed">Analizziamo le tue esigenze, il mercato e i tuoi obiettivi. Audit marketing, analisi competitor e definizione del perimetro progetto.</p>
+            </div>
+            <!-- Step 2: Strategia -->
+            <div data-scroll-reveal data-scroll-reveal-delay="100" class="opacity-0 translate-y-8 transition-all duration-700">
+              <div class="method-card-lg">
+                <span class="method-num-lg">02</span>
+                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M40 14v52"/>
+                  <path d="M40 14c-7-4-17-5-26-1v48c9-4 19-3 26 1"/>
+                  <path d="M40 14c7-4 17-5 26-1v48c-9-4-19-3-26 1"/>
+                  <line x1="22" y1="28" x2="34" y2="28"/>
+                  <line x1="22" y1="36" x2="32" y2="36"/>
+                  <line x1="22" y1="44" x2="34" y2="44"/>
+                  <line x1="46" y1="28" x2="58" y2="28"/>
+                  <line x1="46" y1="36" x2="56" y2="36"/>
+                  <line x1="46" y1="44" x2="58" y2="44"/>
+                </svg>
               </div>
-
-              <!-- Step 3: Design -->
-              <div data-scroll-reveal data-scroll-reveal-delay="200" class="opacity-0 translate-y-8 transition-all duration-700 relative flex gap-8">
-                <div class="flex items-center justify-center w-12 h-12 rounded-full bg-accent-500 text-white font-bold text-lg shadow-lg shadow-accent-500/20 shrink-0 z-10">3</div>
-                <div>
-                  <div class="text-2xl mb-2">&#127912;</div>
-                  <h3 class="text-xl font-bold text-white">Design</h3>
-                  <p class="mt-3 text-text-secondary leading-relaxed">Progettiamo l'esperienza utente e l'interfaccia, validando ogni scelta con te.</p>
-                </div>
+              <h3 class="text-xl font-bold text-white mt-6 mb-3">Strategia</h3>
+              <p class="text-text-secondary leading-relaxed">Definiamo la roadmap, le tecnologie e l'architettura. Stabiliamo KPI misurabili e il piano di tracking per monitorare ogni risultato.</p>
+            </div>
+            <!-- Step 3: Design -->
+            <div data-scroll-reveal data-scroll-reveal-delay="200" class="opacity-0 translate-y-8 transition-all duration-700">
+              <div class="method-card-lg">
+                <span class="method-num-lg">03</span>
+                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 60C12 28 42 20 68 36"/>
+                  <rect x="8" y="56" width="8" height="8" rx="1.5"/>
+                  <rect x="64" y="32" width="8" height="8" rx="1.5"/>
+                  <line x1="12" y1="56" x2="12" y2="30"/>
+                  <line x1="68" y1="32" x2="54" y2="14"/>
+                  <circle cx="12" cy="26" r="3.5"/>
+                  <circle cx="54" cy="14" r="3.5"/>
+                </svg>
               </div>
-
-              <!-- Step 4: Sviluppo -->
-              <div data-scroll-reveal data-scroll-reveal-delay="300" class="opacity-0 translate-y-8 transition-all duration-700 relative flex gap-8">
-                <div class="flex items-center justify-center w-12 h-12 rounded-full bg-accent-500 text-white font-bold text-lg shadow-lg shadow-accent-500/20 shrink-0 z-10">4</div>
-                <div>
-                  <div class="text-2xl mb-2">&#128187;</div>
-                  <h3 class="text-xl font-bold text-white">Sviluppo</h3>
-                  <p class="mt-3 text-text-secondary leading-relaxed">Sviluppiamo il prodotto con metodologia agile, rilasci incrementali e feedback continuo.</p>
-                </div>
+              <h3 class="text-xl font-bold text-white mt-6 mb-3">Design</h3>
+              <p class="text-text-secondary leading-relaxed">Progettiamo l'esperienza utente e l'interfaccia, validando ogni scelta con te.</p>
+            </div>
+            <!-- Step 4: Sviluppo -->
+            <div data-scroll-reveal data-scroll-reveal-delay="300" class="opacity-0 translate-y-8 transition-all duration-700">
+              <div class="method-card-lg">
+                <span class="method-num-lg">04</span>
+                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="10" y="14" width="60" height="52" rx="4"/>
+                  <line x1="10" y1="24" x2="70" y2="24"/>
+                  <circle cx="18" cy="19" r="1.5" fill="currentColor" stroke="none"/>
+                  <circle cx="24" cy="19" r="1.5" fill="currentColor" stroke="none"/>
+                  <circle cx="30" cy="19" r="1.5" fill="currentColor" stroke="none"/>
+                  <polyline points="18,34 26,40 18,46"/>
+                  <line x1="30" y1="46" x2="46" y2="46"/>
+                  <line x1="18" y1="54" x2="42" y2="54"/>
+                </svg>
               </div>
-
-              <!-- Step 5: Test & Lancio -->
-              <div data-scroll-reveal data-scroll-reveal-delay="400" class="opacity-0 translate-y-8 transition-all duration-700 relative flex gap-8">
-                <div class="flex items-center justify-center w-12 h-12 rounded-full bg-accent-500 text-white font-bold text-lg shadow-lg shadow-accent-500/20 shrink-0 z-10">5</div>
-                <div>
-                  <div class="text-2xl mb-2">&#128640;</div>
-                  <h3 class="text-xl font-bold text-white">Test &amp; Lancio</h3>
-                  <p class="mt-3 text-text-secondary leading-relaxed">Testiamo approfonditamente e prepariamo il deploy in produzione.</p>
-                </div>
+              <h3 class="text-xl font-bold text-white mt-6 mb-3">Sviluppo</h3>
+              <p class="text-text-secondary leading-relaxed">Sviluppiamo il prodotto con metodologia agile, rilasci incrementali e feedback continuo.</p>
+            </div>
+            <!-- Step 5: Test & Lancio -->
+            <div data-scroll-reveal data-scroll-reveal-delay="400" class="opacity-0 translate-y-8 transition-all duration-700">
+              <div class="method-card-lg">
+                <span class="method-num-lg">05</span>
+                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M40 8c-6 10-8 22-8 32h16c0-10-2-22-8-32z"/>
+                  <path d="M36 40v8c0 2 1.8 4 4 4s4-2 4-4v-8"/>
+                  <path d="M32 36c-6 2-10 8-12 14l8 2c0-6 2-12 4-16z"/>
+                  <path d="M48 36c6 2 10 8 12 14l-8 2c0-6-2-12-4-16z"/>
+                  <circle cx="40" cy="26" r="4"/>
+                  <path d="M36 52c2 6 0 12 0 16"/>
+                  <path d="M40 52c0 8 0 14 0 18"/>
+                  <path d="M44 52c-2 6 0 12 0 16"/>
+                </svg>
               </div>
-
-              <!-- Step 6: Supporto -->
-              <div data-scroll-reveal data-scroll-reveal-delay="500" class="opacity-0 translate-y-8 transition-all duration-700 relative flex gap-8">
-                <div class="flex items-center justify-center w-12 h-12 rounded-full bg-accent-500 text-white font-bold text-lg shadow-lg shadow-accent-500/20 shrink-0 z-10">6</div>
-                <div>
-                  <div class="text-2xl mb-2">&#128295;</div>
-                  <h3 class="text-xl font-bold text-white">Supporto</h3>
-                  <p class="mt-3 text-text-secondary leading-relaxed">Monitoriamo le performance con dashboard dedicate, iteriamo sulla base dei dati e pianifichiamo le evoluzioni.</p>
-                </div>
+              <h3 class="text-xl font-bold text-white mt-6 mb-3">Test &amp; Lancio</h3>
+              <p class="text-text-secondary leading-relaxed">Testiamo approfonditamente e prepariamo il deploy in produzione.</p>
+            </div>
+            <!-- Step 6: Supporto -->
+            <div data-scroll-reveal data-scroll-reveal-delay="500" class="opacity-0 translate-y-8 transition-all duration-700">
+              <div class="method-card-lg">
+                <span class="method-num-lg">06</span>
+                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="14" y="44" width="12" height="22" rx="2"/>
+                  <rect x="34" y="30" width="12" height="36" rx="2"/>
+                  <rect x="54" y="16" width="12" height="50" rx="2"/>
+                  <line x1="10" y1="70" x2="70" y2="70"/>
+                </svg>
               </div>
+              <h3 class="text-xl font-bold text-white mt-6 mb-3">Supporto</h3>
+              <p class="text-text-secondary leading-relaxed">Monitoriamo le performance con dashboard dedicate, iteriamo sulla base dei dati e pianifichiamo le evoluzioni.</p>
             </div>
           </div>
         </div>

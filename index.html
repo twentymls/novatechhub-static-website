@@ -218,60 +218,186 @@
 
       <!-- Methodology Section -->
       <section id="methodology" class="bg-surface-dark py-24 lg:py-32">
+        <style>
+          .method-card {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 1.25rem;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            background: linear-gradient(168deg, rgba(30, 41, 59, 0.45) 0%, rgba(15, 23, 42, 0.65) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: all 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: default;
+          }
+          .method-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(ellipse at 50% 110%, rgba(56, 189, 248, 0.045) 0%, transparent 60%);
+            pointer-events: none;
+          }
+          .method-card:hover {
+            border-color: rgba(56, 189, 248, 0.18);
+            box-shadow: 0 12px 48px rgba(56, 189, 248, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+            transform: translateY(-5px);
+          }
+          .method-card svg {
+            width: 46%;
+            height: 46%;
+            color: #38bdf8;
+            transition: all 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.08));
+          }
+          .method-card:hover svg {
+            transform: scale(1.06);
+            filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.18));
+          }
+          .method-num {
+            position: absolute;
+            top: 1rem;
+            left: 1.25rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: rgba(56, 189, 248, 0.25);
+            z-index: 1;
+            font-variant-numeric: tabular-nums;
+          }
+        </style>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700">
             <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">Il nostro metodo</h2>
             <p class="mt-4 text-text-secondary text-lg max-w-2xl">Un processo collaudato per trasformare le idee in prodotti concreti.</p>
           </div>
-          <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Step 1 -->
-            <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700 relative">
-              <div class="flex items-center gap-4 mb-4">
-                <span class="flex items-center justify-center w-10 h-10 rounded-full bg-accent-500 text-white text-sm font-bold shrink-0">1</span>
-                <h3 class="text-lg font-bold text-white">Ascolto</h3>
+          <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+            <!-- Step 1: Ascolto -->
+            <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700">
+              <div class="method-card">
+                <span class="method-num">01</span>
+                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="30" y="10" width="20" height="30" rx="10"/>
+                  <line x1="30" y1="20" x2="50" y2="20"/>
+                  <line x1="30" y1="26" x2="50" y2="26"/>
+                  <line x1="30" y1="32" x2="50" y2="32"/>
+                  <path d="M22 32v4c0 10 8 18 18 18s18-8 18-18v-4"/>
+                  <line x1="40" y1="54" x2="40" y2="66"/>
+                  <line x1="28" y1="66" x2="52" y2="66"/>
+                </svg>
               </div>
-              <p class="text-text-secondary text-sm leading-relaxed pl-14">Analizziamo le tue esigenze, il mercato e i tuoi obiettivi. Audit marketing, analisi competitor e definizione del perimetro progetto.</p>
+              <h3 class="text-lg font-bold text-white mt-6 mb-2">Ascolto</h3>
+              <p class="text-text-secondary text-sm leading-relaxed">Analizziamo le tue esigenze, il mercato e i tuoi obiettivi. Audit marketing, analisi competitor e definizione del perimetro progetto.</p>
             </div>
-            <!-- Step 2 -->
-            <div data-scroll-reveal data-scroll-reveal-delay="100" class="opacity-0 translate-y-8 transition-all duration-700 relative">
-              <div class="flex items-center gap-4 mb-4">
-                <span class="flex items-center justify-center w-10 h-10 rounded-full bg-accent-500 text-white text-sm font-bold shrink-0">2</span>
-                <h3 class="text-lg font-bold text-white">Strategia</h3>
+            <!-- Step 2: Strategia -->
+            <div data-scroll-reveal data-scroll-reveal-delay="100" class="opacity-0 translate-y-8 transition-all duration-700">
+              <div class="method-card">
+                <span class="method-num">02</span>
+                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M40 14v52"/>
+                  <path d="M40 14c-7-4-17-5-26-1v48c9-4 19-3 26 1"/>
+                  <path d="M40 14c7-4 17-5 26-1v48c-9-4-19-3-26 1"/>
+                  <line x1="22" y1="28" x2="34" y2="28"/>
+                  <line x1="22" y1="36" x2="32" y2="36"/>
+                  <line x1="22" y1="44" x2="34" y2="44"/>
+                  <line x1="46" y1="28" x2="58" y2="28"/>
+                  <line x1="46" y1="36" x2="56" y2="36"/>
+                  <line x1="46" y1="44" x2="58" y2="44"/>
+                </svg>
               </div>
-              <p class="text-text-secondary text-sm leading-relaxed pl-14">Definiamo la roadmap, le tecnologie e l'architettura. Stabiliamo KPI misurabili e il piano di tracking per monitorare ogni risultato.</p>
+              <h3 class="text-lg font-bold text-white mt-6 mb-2">Strategia</h3>
+              <p class="text-text-secondary text-sm leading-relaxed">Definiamo la roadmap, le tecnologie e l'architettura. Stabiliamo KPI misurabili e il piano di tracking per monitorare ogni risultato.</p>
             </div>
-            <!-- Step 3 -->
-            <div data-scroll-reveal data-scroll-reveal-delay="200" class="opacity-0 translate-y-8 transition-all duration-700 relative">
-              <div class="flex items-center gap-4 mb-4">
-                <span class="flex items-center justify-center w-10 h-10 rounded-full bg-accent-500 text-white text-sm font-bold shrink-0">3</span>
-                <h3 class="text-lg font-bold text-white">Design</h3>
+            <!-- Step 3: Design -->
+            <div data-scroll-reveal data-scroll-reveal-delay="200" class="opacity-0 translate-y-8 transition-all duration-700">
+              <div class="method-card">
+                <span class="method-num">03</span>
+                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Bezier curve -->
+                  <path d="M12 60C12 28 42 20 68 36"/>
+                  <!-- Anchor points -->
+                  <rect x="8" y="56" width="8" height="8" rx="1.5"/>
+                  <rect x="64" y="32" width="8" height="8" rx="1.5"/>
+                  <!-- Control handle lines -->
+                  <line x1="12" y1="56" x2="12" y2="30"/>
+                  <line x1="68" y1="32" x2="54" y2="14"/>
+                  <!-- Control handle dots -->
+                  <circle cx="12" cy="26" r="3.5"/>
+                  <circle cx="54" cy="14" r="3.5"/>
+                </svg>
               </div>
-              <p class="text-text-secondary text-sm leading-relaxed pl-14">Progettiamo l'esperienza utente e l'interfaccia, validando ogni scelta con te.</p>
+              <h3 class="text-lg font-bold text-white mt-6 mb-2">Design</h3>
+              <p class="text-text-secondary text-sm leading-relaxed">Progettiamo l'esperienza utente e l'interfaccia, validando ogni scelta con te.</p>
             </div>
-            <!-- Step 4 -->
-            <div data-scroll-reveal data-scroll-reveal-delay="300" class="opacity-0 translate-y-8 transition-all duration-700 relative">
-              <div class="flex items-center gap-4 mb-4">
-                <span class="flex items-center justify-center w-10 h-10 rounded-full bg-accent-500 text-white text-sm font-bold shrink-0">4</span>
-                <h3 class="text-lg font-bold text-white">Sviluppo</h3>
+            <!-- Step 4: Sviluppo -->
+            <div data-scroll-reveal data-scroll-reveal-delay="300" class="opacity-0 translate-y-8 transition-all duration-700">
+              <div class="method-card">
+                <span class="method-num">04</span>
+                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Terminal window -->
+                  <rect x="10" y="14" width="60" height="52" rx="4"/>
+                  <line x1="10" y1="24" x2="70" y2="24"/>
+                  <!-- Window dots -->
+                  <circle cx="18" cy="19" r="1.5" fill="currentColor" stroke="none"/>
+                  <circle cx="24" cy="19" r="1.5" fill="currentColor" stroke="none"/>
+                  <circle cx="30" cy="19" r="1.5" fill="currentColor" stroke="none"/>
+                  <!-- Command prompt lines -->
+                  <polyline points="18,34 26,40 18,46"/>
+                  <line x1="30" y1="46" x2="46" y2="46"/>
+                  <line x1="18" y1="54" x2="42" y2="54"/>
+                </svg>
               </div>
-              <p class="text-text-secondary text-sm leading-relaxed pl-14">Sviluppiamo il prodotto con metodologia agile, rilasci incrementali e feedback continuo.</p>
+              <h3 class="text-lg font-bold text-white mt-6 mb-2">Sviluppo</h3>
+              <p class="text-text-secondary text-sm leading-relaxed">Sviluppiamo il prodotto con metodologia agile, rilasci incrementali e feedback continuo.</p>
             </div>
-            <!-- Step 5 -->
-            <div data-scroll-reveal data-scroll-reveal-delay="400" class="opacity-0 translate-y-8 transition-all duration-700 relative">
-              <div class="flex items-center gap-4 mb-4">
-                <span class="flex items-center justify-center w-10 h-10 rounded-full bg-accent-500 text-white text-sm font-bold shrink-0">5</span>
-                <h3 class="text-lg font-bold text-white">Test &amp; Lancio</h3>
+            <!-- Step 5: Test & Lancio -->
+            <div data-scroll-reveal data-scroll-reveal-delay="400" class="opacity-0 translate-y-8 transition-all duration-700">
+              <div class="method-card">
+                <span class="method-num">05</span>
+                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Rocket body -->
+                  <path d="M40 8c-6 10-8 22-8 32h16c0-10-2-22-8-32z"/>
+                  <!-- Rocket nose -->
+                  <path d="M36 40v8c0 2 1.8 4 4 4s4-2 4-4v-8"/>
+                  <!-- Left fin -->
+                  <path d="M32 36c-6 2-10 8-12 14l8 2c0-6 2-12 4-16z"/>
+                  <!-- Right fin -->
+                  <path d="M48 36c6 2 10 8 12 14l-8 2c0-6-2-12-4-16z"/>
+                  <!-- Window -->
+                  <circle cx="40" cy="26" r="4"/>
+                  <!-- Flames -->
+                  <path d="M36 52c2 6 0 12 0 16"/>
+                  <path d="M40 52c0 8 0 14 0 18"/>
+                  <path d="M44 52c-2 6 0 12 0 16"/>
+                </svg>
               </div>
-              <p class="text-text-secondary text-sm leading-relaxed pl-14">Testiamo approfonditamente e prepariamo il deploy in produzione.</p>
+              <h3 class="text-lg font-bold text-white mt-6 mb-2">Test &amp; Lancio</h3>
+              <p class="text-text-secondary text-sm leading-relaxed">Testiamo approfonditamente e prepariamo il deploy in produzione.</p>
             </div>
-            <!-- Step 6 -->
-            <div data-scroll-reveal data-scroll-reveal-delay="500" class="opacity-0 translate-y-8 transition-all duration-700 relative">
-              <div class="flex items-center gap-4 mb-4">
-                <span class="flex items-center justify-center w-10 h-10 rounded-full bg-accent-500 text-white text-sm font-bold shrink-0">6</span>
-                <h3 class="text-lg font-bold text-white">Supporto</h3>
+            <!-- Step 6: Supporto -->
+            <div data-scroll-reveal data-scroll-reveal-delay="500" class="opacity-0 translate-y-8 transition-all duration-700">
+              <div class="method-card">
+                <span class="method-num">06</span>
+                <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="14" y="44" width="12" height="22" rx="2"/>
+                  <rect x="34" y="30" width="12" height="36" rx="2"/>
+                  <rect x="54" y="16" width="12" height="50" rx="2"/>
+                  <line x1="10" y1="70" x2="70" y2="70"/>
+                </svg>
               </div>
-              <p class="text-text-secondary text-sm leading-relaxed pl-14">Monitoriamo le performance con dashboard dedicate, iteriamo sulla base dei dati e pianifichiamo le evoluzioni.</p>
+              <h3 class="text-lg font-bold text-white mt-6 mb-2">Supporto</h3>
+              <p class="text-text-secondary text-sm leading-relaxed">Monitoriamo le performance con dashboard dedicate, iteriamo sulla base dei dati e pianifichiamo le evoluzioni.</p>
             </div>
+          </div>
+          <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700 mt-16 text-center">
+            <a href="/methodology.html" class="inline-flex items-center gap-2 text-accent-400 hover:text-accent-300 transition-colors text-sm font-medium">
+              Scopri il nostro processo completo
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
           </div>
         </div>
       </section>
