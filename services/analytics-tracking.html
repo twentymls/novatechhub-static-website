@@ -122,7 +122,7 @@
             </ol>
           </nav>
 
-          <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700">
+          <div>
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight">Analytics &amp; Tracking</h1>
             <p class="mt-6 text-lg text-accent-400">Misura, analizza, ottimizza ogni touchpoint</p>
           </div>
@@ -133,28 +133,131 @@
       <!-- Body -->
       <section class="bg-surface-darker py-24 lg:py-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700">
+          <div>
             <div class="prose prose-invert prose-lg max-w-none text-text-secondary leading-relaxed">
-              <h2>Analytics e tracking: il fondamento di ogni decisione</h2>
-              <p>Non puoi migliorare ci&ograve; che non misuri. Configuriamo sistemi di analytics e tracking completi che ti danno visibilit&agrave; su ogni interazione degli utenti con i tuoi canali digitali. Dalla prima visita alla conversione, ogni touchpoint viene tracciato, analizzato e trasformato in insight azionabili.</p>
+              <h2>Decisioni basate sui dati: perch&eacute; il tracking accurato &egrave; fondamentale</h2>
+              <p>Nel marketing digitale moderno, ogni decisione strategica dovrebbe partire dai dati. Ma c&rsquo;&egrave; un problema che affligge la maggior parte delle aziende italiane: <strong>i dati che raccolgono sono incompleti, inaccurati o mal interpretati</strong>. Pixel configurati in modo errato, eventi duplicati, conversioni non tracciate, dashboard che mostrano numeri incoerenti &mdash; tutto questo porta a decisioni di business basate su informazioni sbagliate.</p>
+              <p>In NovaTechHub consideriamo l&rsquo;analytics e il tracking come l&rsquo;infrastruttura fondamentale su cui poggia ogni altra attivit&agrave; di marketing digitale. Senza dati affidabili, ottimizzare le campagne &egrave; come guidare bendati. Con un sistema di tracking configurato correttamente, ogni euro investito pu&ograve; essere tracciato dal clic alla conversione finale, permettendoti di capire esattamente cosa funziona, cosa no, e dove allocare il budget per massimizzare i risultati.</p>
+              <p>Il nostro approccio &egrave; metodico e rigoroso: partiamo sempre da un audit dell&rsquo;esistente, identifichiamo le lacune, definiamo un piano di implementazione e configuriamo un sistema di misurazione robusto, conforme alle normative sulla privacy e progettato per durare nel tempo.</p>
 
-              <h2>Cosa configuriamo</h2>
+              <h2>Configurazione GA4 e Google Tag Manager</h2>
+              <p>Google Analytics 4 e Google Tag Manager sono gli strumenti fondamentali per la misurazione digitale. Ma la loro potenza dipende interamente dalla qualit&agrave; della configurazione. Un setup approssimativo produce dati inaffidabili; un setup professionale diventa il motore decisionale del tuo business.</p>
+
+              <h3>Setup completo di Google Analytics 4</h3>
+              <p>Configuriamo GA4 da zero o ottimizziamo una configurazione esistente, coprendo ogni aspetto della piattaforma:</p>
               <ul>
-                <li><strong>Google Analytics 4</strong> &mdash; Setup completo con eventi personalizzati, conversioni, audience, e-commerce tracking avanzato e integration con Google Ads. Migrazione da Universal Analytics inclusa.</li>
-                <li><strong>Google Tag Manager</strong> &mdash; Container strutturato con naming convention, trigger e variabili organizzate. Gestione centralizzata di tutti i tag senza toccare il codice del sito.</li>
-                <li><strong>Conversion API (CAPI)</strong> &mdash; Tracking server-side per Meta, Google e TikTok. Dati pi&ugrave; accurati anche con le restrizioni dei browser sui cookie di terze parti.</li>
-                <li><strong>Consent Mode v2</strong> &mdash; Implementazione conforme al GDPR con gestione granulare del consenso. Compatibilit&agrave; con le normative europee sulla privacy.</li>
-                <li><strong>Dashboard personalizzate</strong> &mdash; Pannelli di controllo su Looker Studio (Data Studio) con i KPI che contano per il tuo business, aggiornati in tempo reale.</li>
+                <li><strong>Propriet&agrave; e data stream</strong> &mdash; Configurazione corretta della propriet&agrave; GA4 con data stream Web e, se necessario, App (iOS/Android). Impostazione dei filtri per escludere il traffico interno, impostazione del fuso orario e della valuta, collegamento con Google Ads, Search Console e BigQuery.</li>
+                <li><strong>Eventi personalizzati</strong> &mdash; Oltre agli eventi raccolti automaticamente e quelli di misurazione avanzata (Enhanced Measurement), configuriamo eventi custom che catturano le interazioni specifiche del tuo business: clic su CTA, download di risorse, visualizzazione di video, interazione con configuratori di prodotto, apertura di chat, compilazione di form multi-step.</li>
+                <li><strong>Conversioni e obiettivi</strong> &mdash; Definizione e configurazione delle conversioni chiave (macro e micro), con valori monetari assegnati dove possibile. Creiamo funnel di conversione personalizzati per visualizzare il percorso dell&rsquo;utente e identificare i punti di abbandono.</li>
+                <li><strong>Audience e segmenti</strong> &mdash; Creazione di audience predittive e basate sul comportamento per il remarketing e l&rsquo;analisi. Segmenti per utenti ad alto valore, carrelli abbandonati, visitatori ricorrenti e lead qualificati.</li>
+                <li><strong>Misurazione avanzata (Enhanced Measurement)</strong> &mdash; Configurazione granulare dello scroll tracking, outbound click, site search, video engagement e file download con parametri personalizzati.</li>
               </ul>
 
-              <h2>Audit e ottimizzazione</h2>
-              <p>Se hai gi&agrave; un setup di analytics ma non ti fidi dei dati, possiamo aiutarti. Il nostro audit di tracking analizza la configurazione esistente, identifica dati mancanti o duplicati, verifica la corretta attribuzione delle conversioni e produce un piano di intervento con priorit&agrave; chiare.</p>
+              <h3>Google Tag Manager: gestione centralizzata</h3>
+              <p>GTM &egrave; il sistema nervoso centrale del tuo tracking digitale. Una configurazione professionale significa poter aggiungere, modificare e rimuovere tag senza mai toccare il codice sorgente del sito.</p>
+              <ul>
+                <li><strong>Architettura del container</strong> &mdash; Struttura organizzata con naming convention coerente (es. <code>GA4 - Event - form_submit</code>), cartelle per categoria, documentazione inline e versioning ordinato per facilitare debug e manutenzione.</li>
+                <li><strong>Data layer strutturato</strong> &mdash; Implementazione di un data layer robusto che espone al tag manager tutte le informazioni necessarie: dati dell&rsquo;utente, dettagli del prodotto, stato del carrello, informazioni sulla transazione. Il data layer &egrave; la base su cui costruiamo ogni trigger e variabile.</li>
+                <li><strong>Trigger e variabili avanzate</strong> &mdash; Configurazione di trigger basati su elementi DOM, visibilit&agrave;, timer, regex, custom JavaScript e data layer push. Variabili di lookup table, RegEx table e custom JavaScript per trasformare e arricchire i dati prima dell&rsquo;invio.</li>
+                <li><strong>Debug e QA</strong> &mdash; Test rigoroso di ogni tag tramite GTM Preview mode, GA4 DebugView, Tag Assistant e strumenti di validazione del data layer. Ogni configurazione viene verificata su desktop, mobile, diversi browser e con/senza consenso ai cookie prima del deploy in produzione.</li>
+              </ul>
 
-              <h2>Data layer e integrazioni</h2>
-              <p>Implementiamo data layer strutturati per e-commerce e applicazioni web, garantendo che ogni evento rilevante (add to cart, purchase, form submit, scroll depth, video play) venga catturato correttamente. Integriamo i dati di analytics con CRM, piattaforme di marketing automation e strumenti di business intelligence.</p>
+              <h2>Tracciamento delle conversioni</h2>
+              <p>Una conversione non tracciata &egrave; una conversione invisibile &mdash; e un&rsquo;opportunit&agrave; persa di ottimizzazione. Configuriamo il tracking completo di ogni azione di valore che gli utenti compiono sui tuoi canali digitali.</p>
 
-              <h2>Per chi &egrave; questo servizio</h2>
-              <p>E-commerce che vogliono capire davvero il percorso d'acquisto dei clienti, aziende che investono in advertising e hanno bisogno di attribuzione accurata, marketing manager che vogliono dashboard affidabili per reportistica interna, business che devono adeguarsi a Consent Mode v2 e GDPR.</p>
+              <h3>Tipologie di conversione</h3>
+              <ul>
+                <li><strong>Form submission</strong> &mdash; Tracciamento della compilazione di form di contatto, richiesta preventivo, iscrizione newsletter, registrazione account. Distinguiamo tra inizio compilazione e completamento per calcolare il tasso di abbandono del form.</li>
+                <li><strong>Chiamate telefoniche</strong> &mdash; Tracking delle chiamate generate dal sito tramite clic sul numero di telefono (tap-to-call) e, dove necessario, integrazione con sistemi di call tracking per attribuire le chiamate alla sorgente di traffico originaria.</li>
+                <li><strong>Acquisti e transazioni</strong> &mdash; Setup completo dell&rsquo;e-commerce tracking con tutti gli eventi del funnel: <code>view_item</code>, <code>add_to_cart</code>, <code>begin_checkout</code>, <code>add_payment_info</code>, <code>purchase</code>. Ogni evento include i parametri necessari (product ID, nome, categoria, prezzo, quantit&agrave;, valore totale).</li>
+                <li><strong>Micro-conversioni</strong> &mdash; Non tutte le conversioni sono uguali. Tracciamo anche le azioni intermedie che indicano interesse e intenzione: download di cataloghi, visualizzazione di pagine chiave (pricing, case study), interazione con il configuratore di prodotto, tempo di permanenza significativo, scroll depth oltre il 75%.</li>
+              </ul>
+
+              <h3>Cross-domain tracking</h3>
+              <p>Se il tuo ecosistema digitale comprende pi&ugrave; domini (es. sito principale, e-commerce su sottodominio, landing page su dominio separato, piattaforma di booking esterna), configuriamo il cross-domain tracking per seguire l&rsquo;utente senza interruzioni attraverso tutti i touchpoint, mantenendo una singola sessione e un&rsquo;attribuzione corretta della sorgente di traffico.</p>
+
+              <h3>Server-side tracking e Conversion API</h3>
+              <p>Con le restrizioni crescenti dei browser sui cookie di terze parti (ITP di Safari, ETP di Firefox, il phase-out dei cookie di Chrome), il tracking lato client perde progressivamente accuratezza. Implementiamo soluzioni di tracking server-side tramite:</p>
+              <ul>
+                <li><strong>Google Tag Manager Server-Side</strong> &mdash; Container server su Google Cloud o Stape.io che riceve gli eventi dal client e li inoltra a GA4, Google Ads, Meta e altre piattaforme, bypassando i blocchi del browser e garantendo dati pi&ugrave; completi.</li>
+                <li><strong>Meta Conversion API (CAPI)</strong> &mdash; Invio degli eventi di conversione direttamente dai server alla piattaforma Meta, con deduplicazione degli eventi client-side per evitare conteggi doppi. Miglioramento del match rate attraverso l&rsquo;invio di parametri utente avanzati (email hashata, telefono, indirizzo).</li>
+                <li><strong>Google Ads Enhanced Conversions</strong> &mdash; Configurazione delle conversioni avanzate per migliorare l&rsquo;accuratezza della misurazione e l&rsquo;efficacia del bidding automatico di Google Ads.</li>
+              </ul>
+
+              <h2>Dashboard e reportistica</h2>
+              <p>I dati hanno valore solo se vengono letti, compresi e utilizzati per prendere decisioni. Progettiamo sistemi di reportistica che trasformano dati grezzi in insight chiari e azionabili, accessibili a chiunque nel tuo team &mdash; non solo agli analisti.</p>
+
+              <h3>Looker Studio (Data Studio)</h3>
+              <p>Creiamo dashboard personalizzate su Looker Studio che aggregano dati da molteplici sorgenti (GA4, Google Ads, Meta Ads, Search Console, CRM, e-commerce) in un unico pannello di controllo. Ogni dashboard &egrave; progettata per rispondere a domande specifiche di business, con visualizzazioni intuitive, filtri interattivi e confronti temporali.</p>
+
+              <h3>Dashboard custom e automazione</h3>
+              <ul>
+                <li><strong>Dashboard per il management</strong> &mdash; Vista ad alto livello con KPI principali, trend di crescita e confronto con gli obiettivi. Progettata per essere consultata in meno di 60 secondi.</li>
+                <li><strong>Dashboard operative</strong> &mdash; Dettaglio granulare per il team marketing: performance delle singole campagne, andamento delle keyword, metriche per canale, costo per conversione segmentato.</li>
+                <li><strong>Report automatizzati</strong> &mdash; Configuriamo l&rsquo;invio automatico di report via email con cadenza settimanale o mensile, con commenti pre-configurati e alert automatici quando una metrica supera una soglia critica (es. CPA superiore al target, tasso di conversione in calo, budget esaurito).</li>
+              </ul>
+
+              <h3>Definizione dei KPI</h3>
+              <p>Prima di costruire qualsiasi dashboard, lavoriamo con il tuo team per definire i KPI che contano davvero. Non tutte le metriche sono uguali: distinguiamo tra <strong>vanity metrics</strong> (impression, like, visite) e <strong>metriche di business</strong> (costo per lead, ROAS, tasso di conversione, lifetime value, margine per canale). Definiamo target realistici, benchmark di settore e un framework di misurazione che collega le attivit&agrave; di marketing ai risultati economici dell&rsquo;azienda.</p>
+
+              <h2>Privacy e conformit&agrave;</h2>
+              <p>Il tracking digitale opera in un contesto normativo sempre pi&ugrave; stringente. Il GDPR, la Direttiva ePrivacy e i provvedimenti del Garante Privacy italiano impongono regole precise su come raccogliere, elaborare e conservare i dati degli utenti. La non conformit&agrave; non &egrave; solo un rischio legale &mdash; &egrave; un rischio reputazionale e finanziario.</p>
+
+              <h3>GDPR e normativa italiana</h3>
+              <p>Configuriamo il tuo sistema di tracking in piena conformit&agrave; con il GDPR e con le indicazioni specifiche del Garante Privacy italiano. Questo include: informativa privacy aggiornata con dettaglio dei cookie e delle tecnologie di tracciamento utilizzate, base giuridica corretta per ogni trattamento, registro dei trattamenti aggiornato, e Data Processing Agreement (DPA) con tutti i fornitori terzi.</p>
+
+              <h3>Cookie consent e Consent Management Platform</h3>
+              <p>Implementiamo e configuriamo piattaforme di gestione del consenso (CMP) come Cookiebot, iubenda o OneTrust, garantendo:</p>
+              <ul>
+                <li><strong>Banner conforme</strong> &mdash; Cookie banner che blocca effettivamente i cookie e i tracker prima del consenso esplicito dell&rsquo;utente, con opzioni chiare di accettazione, rifiuto e personalizzazione per categoria (necessari, analitici, marketing, profilazione).</li>
+                <li><strong>Categorizzazione dei cookie</strong> &mdash; Scansione e classificazione di tutti i cookie e le tecnologie di tracciamento presenti sul sito, con documentazione e aggiornamento periodico.</li>
+                <li><strong>Registro dei consensi</strong> &mdash; Archiviazione delle prove di consenso come richiesto dal GDPR, con possibilit&agrave; di esportazione e verifica in caso di audit.</li>
+              </ul>
+
+              <h3>Google Consent Mode v2</h3>
+              <p>Implementiamo Google Consent Mode v2 nella sua configurazione avanzata, che permette a Google di modellare le conversioni anche quando l&rsquo;utente non ha dato il consenso ai cookie di marketing. Configuriamo i segnali <code>ad_storage</code>, <code>analytics_storage</code>, <code>ad_user_data</code> e <code>ad_personalization</code> in modo che si aggiornino dinamicamente in base alla scelta dell&rsquo;utente nel banner cookie. Questo garantisce conformit&agrave; normativa senza perdere completamente i dati di misurazione.</p>
+
+              <h3>Server-side tracking e privacy</h3>
+              <p>Il tracking server-side, oltre a migliorare l&rsquo;accuratezza dei dati, offre un maggiore controllo sulla privacy: puoi filtrare e anonimizzare i dati <em>prima</em> che vengano inviati a piattaforme terze, rimuovere informazioni personali non necessarie e controllare esattamente quali dati condividere con ogni vendor. Ti aiutiamo a configurare questo layer intermedio nel rispetto del principio di minimizzazione dei dati previsto dal GDPR.</p>
+
+              <h2>E-commerce analytics</h2>
+              <p>Per gli e-commerce, l&rsquo;analytics non &egrave; un optional: &egrave; lo strumento che fa la differenza tra un negozio online che cresce e uno che stagna. Configuriamo sistemi di misurazione specifici per l&rsquo;e-commerce che ti danno visibilit&agrave; su ogni fase del percorso d&rsquo;acquisto.</p>
+
+              <h3>Enhanced e-commerce tracking</h3>
+              <p>Implementiamo il tracciamento completo dell&rsquo;e-commerce in GA4, coprendo l&rsquo;intero funnel di acquisto:</p>
+              <ul>
+                <li><strong>Scoperta del prodotto</strong> &mdash; <code>view_item_list</code>, <code>select_item</code>, <code>view_item</code> per capire come gli utenti navigano il catalogo e quali prodotti attirano l&rsquo;attenzione.</li>
+                <li><strong>Intenzione d&rsquo;acquisto</strong> &mdash; <code>add_to_cart</code>, <code>add_to_wishlist</code>, <code>view_cart</code> per misurare l&rsquo;interesse concreto e identificare i prodotti pi&ugrave; desiderati.</li>
+                <li><strong>Processo di checkout</strong> &mdash; <code>begin_checkout</code>, <code>add_shipping_info</code>, <code>add_payment_info</code> per individuare esattamente dove gli utenti abbandonano il processo di acquisto.</li>
+                <li><strong>Conversione</strong> &mdash; <code>purchase</code> con tutti i parametri (transaction ID, valore, tasse, spedizione, coupon, elenco prodotti) per una misurazione precisa del revenue.</li>
+                <li><strong>Post-acquisto</strong> &mdash; <code>refund</code> per monitorare i resi e calcolare il revenue netto reale.</li>
+              </ul>
+
+              <h3>Product performance e merchandising</h3>
+              <p>Analizziamo le performance di ogni prodotto e categoria: tasso di conversione per prodotto, revenue per visita, prodotti pi&ugrave; visualizzati vs pi&ugrave; acquistati, efficacia delle promozioni, impatto del prezzo sulla conversione. Questi dati ti permettono di prendere decisioni informate su assortimento, pricing, posizionamento nel catalogo e investimenti pubblicitari per prodotto.</p>
+
+              <h3>Funnel analysis</h3>
+              <p>Creiamo funnel di analisi personalizzati che mappano il percorso dell&rsquo;utente dalla landing page all&rsquo;acquisto, identificando i passaggi con il tasso di abbandono pi&ugrave; alto. Incrociamo questi dati con segmenti di utenti (nuovi vs ritorno, mobile vs desktop, sorgente di traffico) per capire dove concentrare gli sforzi di ottimizzazione e ottenere il massimo impatto sul fatturato.</p>
+
+              <h3>Customer Lifetime Value (CLV)</h3>
+              <p>Il valore di un cliente non si misura sulla singola transazione, ma sull&rsquo;intero ciclo di relazione. Configuriamo il tracciamento e l&rsquo;analisi del Customer Lifetime Value integrando i dati di GA4 con il tuo CRM e la piattaforma e-commerce. Questo ti permette di capire quanto puoi permetterti di investire per acquisire un nuovo cliente (CAC), quali canali portano i clienti con il valore pi&ugrave; alto nel tempo e quali strategie di retention funzionano meglio.</p>
+
+              <h2>Formazione e supporto</h2>
+              <p>Il miglior sistema di analytics del mondo &egrave; inutile se il tuo team non sa come usarlo. Crediamo fermamente che la conoscenza debba restare all&rsquo;interno della tua azienda, non essere esclusiva del consulente esterno.</p>
+
+              <h3>Training personalizzato</h3>
+              <p>Organizziamo sessioni di formazione su misura per il tuo team, calibrate sul livello di competenza e sugli obiettivi specifici di ogni ruolo:</p>
+              <ul>
+                <li><strong>Per il marketing team</strong> &mdash; Come leggere le dashboard, interpretare i report, creare segmenti di audience, analizzare le performance delle campagne e prendere decisioni operative basate sui dati.</li>
+                <li><strong>Per il management</strong> &mdash; Come utilizzare i KPI di alto livello per le decisioni strategiche, leggere i trend, valutare il ROI dei canali di marketing e allocare il budget.</li>
+                <li><strong>Per il team tecnico</strong> &mdash; Come gestire GTM in autonomia, aggiungere nuovi eventi, fare debug, implementare modifiche al data layer e mantenere il sistema aggiornato.</li>
+              </ul>
+
+              <h3>Documentazione completa</h3>
+              <p>Ogni implementazione &egrave; accompagnata da una documentazione tecnica dettagliata che include: mappa completa degli eventi tracciati con parametri e trigger, architettura del container GTM, struttura del data layer, guida alla lettura delle dashboard, procedure per le modifiche pi&ugrave; comuni e checklist di manutenzione periodica. Questa documentazione garantisce che il tuo team possa operare in autonomia e che le configurazioni siano mantenute nel tempo anche senza il nostro intervento diretto.</p>
+
+              <h3>Supporto continuativo e ottimizzazione</h3>
+              <p>L&rsquo;analytics non &egrave; un progetto che si configura una volta e si dimentica. Le piattaforme si aggiornano, i requisiti di business cambiano, le normative evolvono. Offriamo piani di supporto continuativo che includono: monitoraggio periodico della qualit&agrave; dei dati, aggiornamento delle configurazioni in base alle nuove funzionalit&agrave; delle piattaforme, aggiunta di nuovi eventi quando il sito evolve, verifica della conformit&agrave; normativa e ottimizzazione continua delle dashboard e dei report in base ai feedback del team.</p>
             </div>
           </div>
         </div>
@@ -163,7 +266,7 @@
       <!-- CTA Banner -->
       <section class="bg-surface-darker py-24 lg:py-32">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div data-scroll-reveal class="opacity-0 translate-y-8 transition-all duration-700">
+          <div>
             <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">Hai un progetto in mente?</h2>
             <p class="mt-6 text-lg text-text-secondary">Raccontaci la tua idea e troviamo insieme la soluzione migliore.</p>
             <a href="../#contact"
@@ -180,9 +283,11 @@
     <!-- Footer -->
     <footer class="bg-surface-darker border-t border-slate-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div class="lg:col-span-1">
-            <a href="../" class="text-xl font-bold tracking-tight text-white">NovaTech<span class="text-accent-400">Hub</span></a>
+        <div class="grid grid-cols-1 gap-12" style="grid-template-columns: repeat(3, 1fr);">
+          <div>
+            <a href="../" class="inline-block">
+              <img src="../images/logo_novatechhub.svg" alt="NovaTechHub" class="h-10 w-auto">
+            </a>
             <p class="mt-4 text-sm text-text-secondary leading-relaxed">Progettiamo e sviluppiamo soluzioni digitali su misura per aziende che vogliono crescere.</p>
           </div>
           <div>
@@ -202,14 +307,6 @@
               <li><a href="../services/consulenza-tech.html" class="text-sm text-text-secondary hover:text-white transition-colors">Consulenza Tech</a></li>
               <li><a href="../services/digital-marketing-adv.html" class="text-sm text-text-secondary hover:text-white transition-colors">Digital Marketing &amp; ADV</a></li>
               <li><a href="../services/analytics-tracking.html" class="text-sm text-text-secondary hover:text-white transition-colors">Analytics &amp; Tracking</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Risorse</h3>
-            <ul class="space-y-3">
-              <li><a href="../blog/" class="text-sm text-text-secondary hover:text-white transition-colors">Blog</a></li>
-              <li><a href="../projects/" class="text-sm text-text-secondary hover:text-white transition-colors">Portfolio</a></li>
-              <li><a href="../solutions/soluzioni-per-farmacie.html" class="text-sm text-text-secondary hover:text-white transition-colors">Soluzioni per Farmacie</a></li>
             </ul>
           </div>
         </div>
