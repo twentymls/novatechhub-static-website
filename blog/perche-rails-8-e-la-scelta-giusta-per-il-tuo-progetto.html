@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
-  <title>Perch&eacute; Rails 8 &egrave; la scelta giusta per il tuo progetto &mdash; NovaTechHub</title>
+  <title>Perch&eacute; Rails 8 &egrave; la scelta giusta per il tuo progetto  -  NovaTechHub</title>
   <meta name="description" content="Scopri perch&eacute; Ruby on Rails 8 &egrave; la scelta giusta per il tuo progetto web: Solid Queue, Solid Cache, Kamal 2 e tutte le novit&agrave; del framework.">
 
   <!-- Open Graph -->
@@ -95,7 +95,9 @@
   <nav id="main-nav" aria-label="Navigazione principale" class="fixed top-0 left-0 right-0 z-50 bg-surface-dark/80 backdrop-blur-lg border-b border-slate-800/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
-        <a href="../" class="text-xl font-bold tracking-tight text-white">NovaTech<span class="text-accent-400">Hub</span></a>
+        <a href="../" class="flex items-center">
+          <img src="../images/logo_novatechhub.svg" alt="NovaTechHub" class="h-10 w-auto">
+        </a>
         <div class="hidden lg:flex items-center gap-8">
           <a href="../#services" class="text-sm text-slate-300 hover:text-white transition-colors">Servizi</a>
           <a href="../#about" class="text-sm text-slate-300 hover:text-white transition-colors">Chi siamo</a>
@@ -106,7 +108,7 @@
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </a>
         </div>
-        <button id="navbar-toggle" aria-label="Apri menu" class="lg:hidden p-2 text-slate-300 hover:text-white">
+        <button id="navbar-toggle" aria-expanded="false" aria-label="Apri menu" class="lg:hidden p-2 text-slate-300 hover:text-white">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
         </button>
       </div>
@@ -114,7 +116,7 @@
     <div id="mobile-overlay" class="fixed inset-0 bg-black/60 z-40 hidden lg:hidden"></div>
     <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 bg-surface-darker z-50 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
       <div class="flex items-center justify-between p-6 border-b border-slate-800">
-        <span class="text-lg font-bold text-white">NovaTech<span class="text-accent-400">Hub</span></span>
+        <img src="../images/logo_novatechhub.svg" alt="NovaTechHub" class="h-8 w-auto">
         <button data-navbar-close class="p-2 text-slate-400 hover:text-white">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
@@ -137,7 +139,7 @@
   <main>
 
     <!-- Header -->
-    <section class="bg-surface-dark pb-16" style="padding-top: 10rem;">
+    <section class="bg-surface-dark pt-32 pb-16">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div>
           <nav aria-label="Breadcrumb" class="mb-8">
@@ -196,7 +198,7 @@
 
           <p>Per anni, qualsiasi applicazione Rails seria richiedeva <strong>Redis</strong> come dipendenza esterna: per gestire i job in background con Sidekiq o Resque, per il caching con Redis Store e per i WebSocket con Action Cable. Questo significava un server aggiuntivo da configurare, monitorare e mantenere, con i relativi costi e la complessit&agrave; operativa.</p>
 
-          <p><strong>Solid Queue</strong> rivoluziona la gestione dei job in background utilizzando il database SQL relazionale gi&agrave; presente nell'applicazione &mdash; che sia PostgreSQL, MySQL o SQLite &mdash; come backend per le code. Non si tratta di un compromesso: Solid Queue supporta priorit&agrave; multiple, concorrenza configurabile, job ricorrenti, retry automatici con backoff esponenziale e monitoring integrato. Le performance sono eccellenti per la stragrande maggioranza dei casi d'uso, e l'eliminazione di Redis come dipendenza semplifica drasticamente l'architettura.</p>
+          <p><strong>Solid Queue</strong> rivoluziona la gestione dei job in background utilizzando il database SQL relazionale gi&agrave; presente nell'applicazione  -  che sia PostgreSQL, MySQL o SQLite  -  come backend per le code. Non si tratta di un compromesso: Solid Queue supporta priorit&agrave; multiple, concorrenza configurabile, job ricorrenti, retry automatici con backoff esponenziale e monitoring integrato. Le performance sono eccellenti per la stragrande maggioranza dei casi d'uso, e l'eliminazione di Redis come dipendenza semplifica drasticamente l'architettura.</p>
 
           <p>Allo stesso modo, <strong>Solid Cache</strong> utilizza il database relazionale per il caching dell'applicazione, sostituendo la necessit&agrave; di Redis o Memcached. Il vantaggio non &egrave; solo operativo: il caching basato su database relazionale permette di sfruttare lo storage su disco (molto pi&ugrave; economico della RAM) per cache di dimensioni anche molto grandi, nell'ordine dei terabyte. Per le applicazioni che gestiscono grandi volumi di contenuti cacheable, questo approccio &egrave; significativamente pi&ugrave; conveniente.</p>
 
@@ -204,7 +206,7 @@
 
           <h2>Kamal 2 e il deploy semplificato</h2>
 
-          <p>Il deploy &egrave; storicamente uno degli aspetti pi&ugrave; complessi dello sviluppo web. Piattaforme come Heroku hanno risolto il problema a caro prezzo &mdash; sia in termini economici che di flessibilit&agrave;. Rails 8 integra <strong>Kamal 2</strong>, un sistema di deploy basato su Docker che permette di distribuire applicazioni su qualsiasi server Linux con un singolo comando.</p>
+          <p>Il deploy &egrave; storicamente uno degli aspetti pi&ugrave; complessi dello sviluppo web. Piattaforme come Heroku hanno risolto il problema a caro prezzo  -  sia in termini economici che di flessibilit&agrave;. Rails 8 integra <strong>Kamal 2</strong>, un sistema di deploy basato su Docker che permette di distribuire applicazioni su qualsiasi server Linux con un singolo comando.</p>
 
           <p>Kamal 2 gestisce l'intero ciclo di deploy: costruisce l'immagine Docker dell'applicazione, la carica sul server di destinazione, configura il reverse proxy (Kamal utilizza Traefik), gestisce i certificati SSL tramite Let's Encrypt e orchestra il passaggio dalla vecchia alla nuova versione con <strong>zero-downtime deployment</strong>. Tutto questo senza dover gestire cluster Kubernetes, pipeline CI/CD complesse o infrastrutture cloud sofisticate.</p>
 
@@ -216,9 +218,9 @@
 
           <p>L'autenticazione &egrave; una funzionalit&agrave; che ogni applicazione web necessita, eppure per anni Rails ha delegato questa responsabilit&agrave; a gem esterne come Devise o Clearance. Queste librerie sono potenti ma aggiungono complessit&agrave;, dipendenze e spesso pi&ugrave; funzionalit&agrave; di quelle effettivamente necessarie.</p>
 
-          <p>Rails 8 introduce un <strong>generatore di autenticazione integrato</strong> che crea un sistema completo di login, logout, registrazione e gestione sessioni con un singolo comando: <code>rails generate authentication</code>. Il codice generato &egrave; chiaro, leggibile e completamente personalizzabile &mdash; nessuna magia nascosta dietro le quinte di una gem.</p>
+          <p>Rails 8 introduce un <strong>generatore di autenticazione integrato</strong> che crea un sistema completo di login, logout, registrazione e gestione sessioni con un singolo comando: <code>rails generate authentication</code>. Il codice generato &egrave; chiaro, leggibile e completamente personalizzabile  -  nessuna magia nascosta dietro le quinte di una gem.</p>
 
-          <p>Il sistema include gestione sicura delle password con bcrypt, token di sessione, protezione CSRF, rate limiting per prevenire attacchi brute force e supporto per il reset della password via email. Per la maggior parte delle applicazioni, questo &egrave; tutto ci&ograve; che serve. Per casi d'uso pi&ugrave; avanzati &mdash; OAuth, autenticazione a due fattori, SSO &mdash; il codice generato offre una base solida e ben strutturata su cui costruire.</p>
+          <p>Il sistema include gestione sicura delle password con bcrypt, token di sessione, protezione CSRF, rate limiting per prevenire attacchi brute force e supporto per il reset della password via email. Per la maggior parte delle applicazioni, questo &egrave; tutto ci&ograve; che serve. Per casi d'uso pi&ugrave; avanzati  -  OAuth, autenticazione a due fattori, SSO  -  il codice generato offre una base solida e ben strutturata su cui costruire.</p>
 
           <p>L'approccio "generato, non importato" &egrave; coerente con la filosofia Rails: il codice appartiene al progetto, non a una libreria esterna. Questo significa pieno controllo, nessun rischio di breaking change da aggiornamenti di gem e una comprensione completa di come funziona l'autenticazione nella propria applicazione.</p>
 
@@ -242,7 +244,7 @@
 
           <p>Rails 8 rappresenta un momento di svolta per il framework: eliminando dipendenze storiche come Redis e semplificando radicalmente il deploy con Kamal 2, rende possibile costruire e distribuire applicazioni web complete con una complessit&agrave; infrastrutturale minima. Il generatore di autenticazione integrato, i componenti Solid e il supporto migliorato per SQLite in produzione completano un quadro che mette la produttivit&agrave; dello sviluppatore al primo posto.</p>
 
-          <p>Per chi sta valutando il framework giusto per il prossimo progetto &mdash; che si tratti di una startup, un SaaS, un e-commerce o uno strumento interno &mdash; Rails 8 merita una considerazione seria. La comunit&agrave; &egrave; attiva, la documentazione eccellente e l'ecosistema di gem copre praticamente ogni esigenza.</p>
+          <p>Per chi sta valutando il framework giusto per il prossimo progetto  -  che si tratti di una startup, un SaaS, un e-commerce o uno strumento interno  -  Rails 8 merita una considerazione seria. La comunit&agrave; &egrave; attiva, la documentazione eccellente e l'ecosistema di gem copre praticamente ogni esigenza.</p>
 
           <p>Se vuoi esplorare come Rails 8 pu&ograve; accelerare il tuo prossimo progetto, il nostro team ha esperienza diretta con il framework e con le sue nuove funzionalit&agrave;. <a href="../services/sviluppo-web.html">Scopri il nostro servizio di sviluppo web</a> e parliamo della soluzione pi&ugrave; adatta alle tue esigenze.</p>
 
@@ -328,7 +330,7 @@
   <!-- Footer -->
   <footer class="bg-surface-darker border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-      <div class="grid grid-cols-1 gap-12" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
           <a href="../" class="inline-block">
             <img src="../images/logo_novatechhub.svg" alt="NovaTechHub" class="h-10 w-auto">
@@ -364,6 +366,6 @@
     </div>
   </footer>
 
-  <script src="../js/app.js"></script>
+  <script src="../js/app.js" defer></script>
 </body>
 </html>

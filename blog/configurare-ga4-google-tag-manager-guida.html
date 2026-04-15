@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
-    <title>Configurare GA4 e Google Tag Manager: la guida definitiva — NovaTechHub</title>
+    <title>Configurare GA4 e Google Tag Manager: la guida definitiva - NovaTechHub</title>
     <meta name="description" content="Guida definitiva per configurare Google Analytics 4 e Google Tag Manager: setup, eventi, conversioni e best practice per il tracking del tuo sito.">
     <link rel="canonical" href="https://www.novatechhub.it/blog/configurare-ga4-google-tag-manager-guida.html">
     <meta property="og:type" content="article">
@@ -62,7 +62,9 @@
     <nav id="main-nav" aria-label="Navigazione principale" class="fixed top-0 left-0 right-0 z-50 bg-surface-dark/80 backdrop-blur-lg border-b border-slate-800/50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
-          <a href="../" class="text-xl font-bold tracking-tight text-white">NovaTech<span class="text-accent-400">Hub</span></a>
+          <a href="../" class="flex items-center">
+            <img src="../images/logo_novatechhub.svg" alt="NovaTechHub" class="h-10 w-auto">
+          </a>
           <div class="hidden lg:flex items-center gap-8">
             <a href="../#services" class="text-sm text-slate-300 hover:text-white transition-colors">Servizi</a>
             <a href="../#about" class="text-sm text-slate-300 hover:text-white transition-colors">Chi siamo</a>
@@ -73,7 +75,7 @@
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
             </a>
           </div>
-          <button id="navbar-toggle" aria-label="Apri menu" class="lg:hidden p-2 text-slate-300 hover:text-white">
+          <button id="navbar-toggle" aria-expanded="false" aria-label="Apri menu" class="lg:hidden p-2 text-slate-300 hover:text-white">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
           </button>
         </div>
@@ -81,7 +83,7 @@
       <div id="mobile-overlay" class="fixed inset-0 bg-black/60 z-40 hidden lg:hidden"></div>
       <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 bg-surface-darker z-50 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
         <div class="flex items-center justify-between p-6 border-b border-slate-800">
-          <span class="text-lg font-bold text-white">NovaTech<span class="text-accent-400">Hub</span></span>
+          <img src="../images/logo_novatechhub.svg" alt="NovaTechHub" class="h-8 w-auto">
           <button data-navbar-close class="p-2 text-slate-400 hover:text-white">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
@@ -103,7 +105,7 @@
 
     <main>
       <!-- Header -->
-      <section class="bg-surface-dark pb-16" style="padding-top: 10rem;">
+      <section class="bg-surface-dark pt-32 pb-16">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div>
             <nav aria-label="Breadcrumb" class="mb-8">
@@ -146,7 +148,7 @@
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="prose prose-invert max-w-none">
 
-            <p>Configurare GA4 e Google Tag Manager correttamente &egrave; il primo passo per avere dati affidabili su cui costruire le proprie decisioni di business. Senza un sistema di tracking ben impostato, ogni scelta strategica rischia di basarsi su intuizioni anzich&eacute; su numeri concreti. Eppure, molti siti web italiani utilizzano ancora configurazioni parziali, tag mal implementati o &mdash; peggio &mdash; non tracciano affatto le metriche pi&ugrave; importanti.</p>
+            <p>Configurare GA4 e Google Tag Manager correttamente &egrave; il primo passo per avere dati affidabili su cui costruire le proprie decisioni di business. Senza un sistema di tracking ben impostato, ogni scelta strategica rischia di basarsi su intuizioni anzich&eacute; su numeri concreti. Eppure, molti siti web italiani utilizzano ancora configurazioni parziali, tag mal implementati o  -  peggio  -  non tracciano affatto le metriche pi&ugrave; importanti.</p>
 
             <p>In questa guida definitiva ti accompagneremo passo dopo passo nella configurazione completa di <strong>Google Analytics 4</strong> (GA4) e <strong>Google Tag Manager</strong> (GTM), dalla creazione degli account fino al tracciamento avanzato delle conversioni. Che tu stia migrando da Universal Analytics o partendo da zero, troverai istruzioni pratiche, esempi concreti e best practice aggiornate al 2026.</p>
 
@@ -154,7 +156,7 @@
 
             <p>Il panorama dell&rsquo;analisi web &egrave; cambiato radicalmente negli ultimi anni. Universal Analytics, lo standard per oltre un decennio, ha lasciato definitivamente il posto a GA4, un sistema completamente ripensato attorno a un <strong>modello basato sugli eventi</strong>. Questo cambiamento non &egrave; semplicemente cosmetico: ridefinisce il modo in cui raccogliamo, interpretiamo e utilizziamo i dati.</p>
 
-            <p>In Universal Analytics, il concetto centrale era la <em>sessione</em>: un insieme di interazioni raggruppate temporalmente. GA4 abbandona questa logica e pone l&rsquo;evento come unit&agrave; fondamentale di misurazione. Ogni azione dell&rsquo;utente &mdash; una visualizzazione di pagina, un clic, uno scroll, una transazione &mdash; viene registrata come un evento con parametri associati. Questo approccio offre una flessibilit&agrave; enormemente superiore e consente di costruire un quadro molto pi&ugrave; dettagliato del comportamento degli utenti.</p>
+            <p>In Universal Analytics, il concetto centrale era la <em>sessione</em>: un insieme di interazioni raggruppate temporalmente. GA4 abbandona questa logica e pone l&rsquo;evento come unit&agrave; fondamentale di misurazione. Ogni azione dell&rsquo;utente  -  una visualizzazione di pagina, un clic, uno scroll, una transazione  -  viene registrata come un evento con parametri associati. Questo approccio offre una flessibilit&agrave; enormemente superiore e consente di costruire un quadro molto pi&ugrave; dettagliato del comportamento degli utenti.</p>
 
             <p>Google Tag Manager, dal canto suo, rappresenta il ponte tra il tuo sito web e gli strumenti di analytics. Invece di inserire codice direttamente nel sorgente HTML, GTM ti consente di gestire tutti i tag di tracciamento da un&rsquo;interfaccia centralizzata, senza dover coinvolgere sviluppatori per ogni modifica. I vantaggi principali di questo approccio combinato includono:</p>
 
@@ -211,7 +213,7 @@
               <li>Torna nell&rsquo;interfaccia GTM e clicca su <strong>&ldquo;Tag&rdquo;</strong> &rarr; <strong>&ldquo;Nuovo&rdquo;</strong>.</li>
               <li>Seleziona il tipo di tag <strong>&ldquo;Google Tag&rdquo;</strong> (nella versione pi&ugrave; recente di GTM) oppure &ldquo;Google Analytics: configurazione GA4&rdquo;.</li>
               <li>Inserisci il tuo <strong>ID misurazione</strong> (<code>G-XXXXXXXXXX</code>) nel campo dedicato.</li>
-              <li>Come attivatore, seleziona <strong>&ldquo;All Pages&rdquo;</strong> (Tutte le pagine) &mdash; questo garantisce che GA4 si carichi su ogni pagina del sito.</li>
+              <li>Come attivatore, seleziona <strong>&ldquo;All Pages&rdquo;</strong> (Tutte le pagine)  -  questo garantisce che GA4 si carichi su ogni pagina del sito.</li>
               <li>Assegna un nome chiaro al tag, ad esempio <strong>&ldquo;GA4 &ndash; Configurazione&rdquo;</strong>, e salva.</li>
             </ol>
 
@@ -222,12 +224,12 @@
             <p>GA4 include una funzionalit&agrave; chiamata <strong>Misurazione avanzata</strong> che traccia automaticamente una serie di eventi senza bisogno di configurazione aggiuntiva. Dalla propriet&agrave; GA4, vai su <strong>Amministrazione &rarr; Flussi di dati</strong>, seleziona il tuo flusso web e verifica che siano attivi i seguenti tracciamenti automatici:</p>
 
             <ul>
-              <li><strong>Visualizzazioni di pagina</strong> (<code>page_view</code>) &mdash; registrate automaticamente ad ogni caricamento.</li>
-              <li><strong>Scorrimento</strong> (<code>scroll</code>) &mdash; attivato quando l&rsquo;utente raggiunge il 90% della pagina.</li>
-              <li><strong>Click in uscita</strong> (<code>click</code>) &mdash; traccia i clic verso domini esterni al tuo sito.</li>
-              <li><strong>Ricerca nel sito</strong> (<code>view_search_results</code>) &mdash; se presente una funzione di ricerca interna.</li>
-              <li><strong>Interazioni con i video</strong> (<code>video_start</code>, <code>video_progress</code>, <code>video_complete</code>) &mdash; per video YouTube incorporati.</li>
-              <li><strong>Download di file</strong> (<code>file_download</code>) &mdash; PDF, documenti Office, archivi compressi e altri formati comuni.</li>
+              <li><strong>Visualizzazioni di pagina</strong> (<code>page_view</code>)  -  registrate automaticamente ad ogni caricamento.</li>
+              <li><strong>Scorrimento</strong> (<code>scroll</code>)  -  attivato quando l&rsquo;utente raggiunge il 90% della pagina.</li>
+              <li><strong>Click in uscita</strong> (<code>click</code>)  -  traccia i clic verso domini esterni al tuo sito.</li>
+              <li><strong>Ricerca nel sito</strong> (<code>view_search_results</code>)  -  se presente una funzione di ricerca interna.</li>
+              <li><strong>Interazioni con i video</strong> (<code>video_start</code>, <code>video_progress</code>, <code>video_complete</code>)  -  per video YouTube incorporati.</li>
+              <li><strong>Download di file</strong> (<code>file_download</code>)  -  PDF, documenti Office, archivi compressi e altri formati comuni.</li>
             </ul>
 
             <p>Questa misurazione automatica copre gi&agrave; molti casi d&rsquo;uso comuni, ma per un tracking davvero completo sar&agrave; necessario configurare eventi personalizzati.</p>
@@ -238,7 +240,7 @@
 
             <h3>Tracciamento dei clic</h3>
 
-            <p>Per tracciare clic su elementi specifici &mdash; come pulsanti CTA, link nel menu, banner promozionali o pulsanti di aggiunta al carrello &mdash; utilizza gli <strong>attivatori di tipo &ldquo;Clic&rdquo;</strong> in GTM. Puoi filtrare per classe CSS, ID elemento, testo del link o URL di destinazione. Ad esempio, per tracciare i clic sul pulsante &ldquo;Richiedi preventivo&rdquo;:</p>
+            <p>Per tracciare clic su elementi specifici  -  come pulsanti CTA, link nel menu, banner promozionali o pulsanti di aggiunta al carrello  -  utilizza gli <strong>attivatori di tipo &ldquo;Clic&rdquo;</strong> in GTM. Puoi filtrare per classe CSS, ID elemento, testo del link o URL di destinazione. Ad esempio, per tracciare i clic sul pulsante &ldquo;Richiedi preventivo&rdquo;:</p>
 
             <ol>
               <li>Abilita le variabili integrate di tipo &ldquo;Clic&rdquo; in GTM (Click Classes, Click ID, Click Text, Click URL).</li>
@@ -271,11 +273,11 @@
             <p>In GA4, vai su <strong>Amministrazione &rarr; Eventi</strong> e individua l&rsquo;evento che vuoi promuovere a conversione (ad esempio <code>form_submit</code> o <code>purchase</code>). Attiva l&rsquo;interruttore <strong>&ldquo;Contrassegna come conversione&rdquo;</strong>. Da quel momento, GA4 tratter&agrave; quell&rsquo;evento in modo speciale nei report, nei funnel e nei modelli di attribuzione. Puoi anche creare conversioni personalizzate dalla sezione dedicata, specificando condizioni aggiuntive basate sui parametri dell&rsquo;evento. Le conversioni pi&ugrave; comuni da configurare includono:</p>
 
             <ul>
-              <li><code>form_submit</code> &mdash; invio di form di contatto o richiesta preventivo.</li>
-              <li><code>purchase</code> &mdash; completamento di un acquisto per gli e-commerce.</li>
-              <li><code>sign_up</code> &mdash; registrazione di un nuovo utente o iscrizione alla newsletter.</li>
-              <li><code>phone_click</code> &mdash; clic sul numero di telefono, fondamentale per attivit&agrave; locali.</li>
-              <li><code>download_brochure</code> &mdash; download di materiale commerciale come cataloghi o listini.</li>
+              <li><code>form_submit</code>  -  invio di form di contatto o richiesta preventivo.</li>
+              <li><code>purchase</code>  -  completamento di un acquisto per gli e-commerce.</li>
+              <li><code>sign_up</code>  -  registrazione di un nuovo utente o iscrizione alla newsletter.</li>
+              <li><code>phone_click</code>  -  clic sul numero di telefono, fondamentale per attivit&agrave; locali.</li>
+              <li><code>download_brochure</code>  -  download di materiale commerciale come cataloghi o listini.</li>
             </ul>
 
             <h3>Tracciamento e-commerce</h3>
@@ -334,7 +336,7 @@
 
             <p>Configurare GA4 e Google Tag Manager in modo professionale non &egrave; un&rsquo;operazione che si esaurisce in pochi minuti, ma &egrave; un investimento che ripaga enormemente nel tempo. Con un sistema di tracking ben strutturato, avrai accesso a dati precisi su cui basare ogni decisione: dall&rsquo;ottimizzazione delle campagne pubblicitarie al miglioramento dell&rsquo;esperienza utente, dalla comprensione del percorso di acquisto alla misurazione del reale ritorno sugli investimenti.</p>
 
-            <p>Ricorda che il tracking &egrave; un processo continuo: man mano che il tuo business evolve, dovrai aggiornare gli eventi tracciati, aggiungere nuove conversioni, adattare la configurazione alle nuove funzionalit&agrave; del sito e restare al passo con gli aggiornamenti delle piattaforme. La chiave &egrave; partire con una base solida e ben documentata &mdash; ed &egrave; esattamente quello che questa guida ti ha fornito.</p>
+            <p>Ricorda che il tracking &egrave; un processo continuo: man mano che il tuo business evolve, dovrai aggiornare gli eventi tracciati, aggiungere nuove conversioni, adattare la configurazione alle nuove funzionalit&agrave; del sito e restare al passo con gli aggiornamenti delle piattaforme. La chiave &egrave; partire con una base solida e ben documentata  -  ed &egrave; esattamente quello che questa guida ti ha fornito.</p>
 
             <p>Se preferisci affidarti a professionisti per la configurazione o hai bisogno di un setup avanzato con server-side tracking, Data Layer personalizzati ed e-commerce tracking completo, scopri <a href="../services/analytics-tracking.html">il nostro servizio di analytics e tracking</a>. Analizzeremo la tua situazione attuale, identificheremo le lacune nel tracciamento e implementeremo una configurazione su misura, conforme alle normative e pronta a scalare con il tuo business.</p>
 
@@ -415,7 +417,7 @@
     <!-- Footer -->
     <footer class="bg-surface-darker border-t border-slate-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-        <div class="grid grid-cols-1 gap-12" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <a href="../" class="inline-block">
               <img src="../images/logo_novatechhub.svg" alt="NovaTechHub" class="h-10 w-auto">
@@ -451,6 +453,6 @@
       </div>
     </footer>
 
-    <script src="../js/app.js"></script>
+    <script src="../js/app.js" defer></script>
   </body>
 </html>

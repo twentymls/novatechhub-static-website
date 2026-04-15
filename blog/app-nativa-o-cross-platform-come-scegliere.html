@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="mobile-web-app-capable" content="yes">
-  <title>App nativa o cross-platform: come scegliere nel 2026 &mdash; NovaTechHub</title>
+  <title>App nativa o cross-platform: come scegliere nel 2026  -  NovaTechHub</title>
   <meta name="description" content="App nativa o cross-platform? Confronto completo tra sviluppo nativo iOS/Android e framework cross-platform come Flutter e React Native.">
   <meta name="keywords" content="app nativa o cross-platform, sviluppo app mobile, Flutter vs React Native, app iOS Android">
   <link rel="canonical" href="https://www.novatechhub.it/blog/app-nativa-o-cross-platform-come-scegliere.html">
@@ -100,7 +100,9 @@
   <nav id="main-nav" aria-label="Navigazione principale" class="fixed top-0 left-0 right-0 z-50 bg-surface-dark/80 backdrop-blur-lg border-b border-slate-800/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
-        <a href="../" class="text-xl font-bold tracking-tight text-white">NovaTech<span class="text-accent-400">Hub</span></a>
+        <a href="../" class="flex items-center">
+          <img src="../images/logo_novatechhub.svg" alt="NovaTechHub" class="h-10 w-auto">
+        </a>
         <div class="hidden lg:flex items-center gap-8">
           <a href="../#services" class="text-sm text-slate-300 hover:text-white transition-colors">Servizi</a>
           <a href="../#about" class="text-sm text-slate-300 hover:text-white transition-colors">Chi siamo</a>
@@ -111,7 +113,7 @@
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </a>
         </div>
-        <button id="navbar-toggle" aria-label="Apri menu" class="lg:hidden p-2 text-slate-300 hover:text-white">
+        <button id="navbar-toggle" aria-expanded="false" aria-label="Apri menu" class="lg:hidden p-2 text-slate-300 hover:text-white">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
         </button>
       </div>
@@ -119,7 +121,7 @@
     <div id="mobile-overlay" class="fixed inset-0 bg-black/60 z-40 hidden lg:hidden"></div>
     <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 bg-surface-darker z-50 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
       <div class="flex items-center justify-between p-6 border-b border-slate-800">
-        <span class="text-lg font-bold text-white">NovaTech<span class="text-accent-400">Hub</span></span>
+        <img src="../images/logo_novatechhub.svg" alt="NovaTechHub" class="h-8 w-auto">
         <button data-navbar-close class="p-2 text-slate-400 hover:text-white">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
@@ -141,7 +143,7 @@
 
   <main>
     <!-- Header -->
-    <section class="bg-surface-dark pb-16" style="padding-top: 10rem;">
+    <section class="bg-surface-dark pt-32 pb-16">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div>
           <!-- Breadcrumb -->
@@ -223,7 +225,7 @@
           <ul>
             <li><strong>Performance ottimali</strong>: il codice nativo viene compilato direttamente per l&rsquo;architettura del dispositivo, garantendo la massima velocit&agrave; di esecuzione. Per app con calcoli intensivi, animazioni complesse, realt&agrave; aumentata o elaborazione video, il nativo rimane imbattibile</li>
             <li><strong>Esperienza utente perfetta</strong>: ogni piattaforma ha le sue linee guida di design (Human Interface Guidelines per iOS, Material Design per Android). Lo sviluppo nativo permette di rispettarle al 100%, offrendo un&rsquo;esperienza che gli utenti percepiscono come naturale e familiare</li>
-            <li><strong>Accesso completo alle API</strong>: fotocamera, sensori, Bluetooth, NFC, notifiche push avanzate, widget, funzionalit&agrave; di accessibilit&agrave; &mdash; tutto &egrave; disponibile dal giorno zero, senza attendere che un plugin di terze parti venga aggiornato</li>
+            <li><strong>Accesso completo alle API</strong>: fotocamera, sensori, Bluetooth, NFC, notifiche push avanzate, widget, funzionalit&agrave; di accessibilit&agrave;  -  tutto &egrave; disponibile dal giorno zero, senza attendere che un plugin di terze parti venga aggiornato</li>
             <li><strong>Supporto immediato alle novit&agrave;</strong>: quando Apple o Google rilasciano nuove funzionalit&agrave; del sistema operativo, le app native possono integrarle immediatamente</li>
             <li><strong>Stabilit&agrave; a lungo termine</strong>: meno dipendenza da framework di terze parti significa meno rischi legati a cambiamenti di roadmap, deprecazioni o abbandono del progetto</li>
           </ul>
@@ -281,7 +283,7 @@
           <ul>
             <li><strong>Il budget &egrave; limitato</strong>: startup e PMI che vogliono essere presenti su entrambe le piattaforme senza raddoppiare i costi trovano nel cross-platform la soluzione ideale. Il risparmio pu&ograve; essere reinvestito in marketing e acquisizione utenti</li>
             <li><strong>Il time-to-market &egrave; prioritario</strong>: devi validare un&rsquo;idea velocemente? Un MVP cross-platform ti permette di testare il mercato in met&agrave; del tempo</li>
-            <li><strong>L&rsquo;app &egrave; prevalentemente informativa o transazionale</strong>: e-commerce, app di prenotazione, portali aziendali, app di notizie &mdash; tutte tipologie in cui il cross-platform eccelle senza compromessi significativi</li>
+            <li><strong>L&rsquo;app &egrave; prevalentemente informativa o transazionale</strong>: e-commerce, app di prenotazione, portali aziendali, app di notizie  -  tutte tipologie in cui il cross-platform eccelle senza compromessi significativi</li>
             <li><strong>Vuoi consistenza tra le piattaforme</strong>: se il tuo brand richiede un&rsquo;esperienza identica su iOS e Android, Flutter &egrave; particolarmente indicato grazie al suo motore di rendering indipendente dalla piattaforma</li>
             <li><strong>Hai un team web esistente</strong>: se il tuo team ha gi&agrave; competenze in JavaScript/TypeScript, React Native permette una transizione naturale verso lo sviluppo mobile</li>
           </ul>
@@ -389,7 +391,7 @@
   <!-- Footer -->
   <footer class="bg-surface-darker border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-      <div class="grid grid-cols-1 gap-12" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
           <a href="../" class="inline-block">
             <img src="../images/logo_novatechhub.svg" alt="NovaTechHub" class="h-10 w-auto">
@@ -425,6 +427,6 @@
     </div>
   </footer>
 
-  <script src="../js/app.js"></script>
+  <script src="../js/app.js" defer></script>
 </body>
 </html>

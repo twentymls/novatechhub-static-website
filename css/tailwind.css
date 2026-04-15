@@ -146,3 +146,8 @@
 .prose ol > li::marker {
   color: #64748b;
 }
+
+/* Missing responsive utilities */
+.pt-32{padding-top:calc(var(--spacing) * 32)}
+@media (min-width:48rem){.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:object-center{object-position:center}}
+.hover\:text-accent-300:hover{color:var(--color-accent-300,#7dd3fc)}
