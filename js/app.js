@@ -127,46 +127,8 @@
   });
 
   // ==========================================
-  // 7. Hero stat count-up
+  // 7. (removed)
   // ==========================================
-  const countUp = (el, target, opts = {}) => {
-    const duration = opts.duration || 1400;
-    const prefix = opts.prefix || '';
-    const suffix = opts.suffix || '';
-    const decimals = opts.decimals || 0;
-    const start = performance.now();
-    const tick = (now) => {
-      const t = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - t, 3); // cubic ease-out
-      const val = target * eased;
-      el.textContent = prefix + val.toFixed(decimals) + suffix;
-      if (t < 1) requestAnimationFrame(tick);
-      else if (opts.appendHtml) el.innerHTML = opts.appendHtml;
-    };
-    requestAnimationFrame(tick);
-  };
-
-  const statNums = document.querySelectorAll('.hero-stat .num');
-  const statIO = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      statIO.unobserve(e.target);
-      const el = e.target;
-      const raw = el.textContent.trim();
-      if (/^\d+\+$/.test(raw)) {
-        countUp(el, parseInt(raw), { suffix: '+' });
-      } else if (/^€\d+M$/.test(raw)) {
-        countUp(el, parseInt(raw.match(/\d+/)[0]), { prefix: '€', suffix: 'M' });
-      } else if (/^\d+\.\d/.test(raw)) {
-        countUp(el, 4.9, {
-          decimals: 1,
-          duration: 1600,
-          appendHtml: '4.9<span style="font-size:24px;color:var(--ink-3)">/5</span>'
-        });
-      }
-    });
-  }, { threshold: 0.4 });
-  statNums.forEach(n => statIO.observe(n));
 
   // ==========================================
   // 8. Magnetic effect on buttons
