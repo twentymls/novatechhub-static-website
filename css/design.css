@@ -24,6 +24,7 @@
 
 /* ---------- BASE (scoped to design pages via body class) ---------- */
 @layer design-base {
+  html { overflow-x: hidden; }
   body.design-body {
     font-family: 'Inter', -apple-system, sans-serif;
     background: var(--bg);
@@ -32,7 +33,7 @@
     font-size: 16px;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+    overflow-x: visible;
     margin: 0; padding: 0;
   }
   body.design-body * { box-sizing: border-box; }
@@ -56,6 +57,7 @@
 /* ---------- NAV ---------- */
 nav.top {
   position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  -webkit-transform: translateZ(0); transform: translateZ(0);
   backdrop-filter: blur(14px) saturate(1.2);
   -webkit-backdrop-filter: blur(14px) saturate(1.2);
   background: oklch(0.16 0.015 255);
