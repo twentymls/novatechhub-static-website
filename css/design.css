@@ -356,7 +356,7 @@ h1.hero-title .word {
 }
 .marquee-track {
   display: flex; gap: 64px; white-space: nowrap;
-  animation: marquee-scroll 40s linear infinite;
+  animation: marquee-scroll 20s linear infinite;
   padding-left: 220px;
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }
@@ -737,9 +737,23 @@ footer.design-footer { padding: 96px 0 32px; border-top: 1px solid var(--line-2)
   .service-grid { grid-template-columns: 1fr; }
   .stack-grid { grid-template-columns: repeat(2, 1fr); }
   .method-step .desc, .method-step .deliv { padding-left: 0; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .hero-side { flex-direction: column; }
-  .cta-block { padding: 40px 24px; margin: 0 12px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+  .footer-brand { display: flex; flex-direction: column; align-items: center; }
+  .footer-col ul { align-items: center; }
+  .hero-side { flex-direction: column; text-align: center; }
+  .hero-stat { text-align: center; }
+  h1.hero-title { text-align: center; }
+  .eyebrow { justify-content: center; }
+  .hero-meta { justify-content: center; text-align: center; }
+  .hero-actions { justify-content: center; }
+  .section-head { text-align: center; }
+  .section-head h2 { max-width: none; }
+  .section-head .lede { margin-left: auto; margin-right: auto; }
+  .cta-block { padding: 40px 24px; margin: 0 12px; text-align: center; }
+  .cta-block-row { justify-content: center; }
+  .marquee { padding: 20px 0 32px; }
+  .marquee-label { position: static; transform: none; display: block; text-align: center; margin-bottom: 16px; padding-right: 0; }
+  .marquee-track { padding-left: 0; }
   .contact-form .form-row { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
 }
