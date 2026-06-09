@@ -1,0 +1,7 @@
+{
+  "files": ["**/*.html"],
+  "exclude": [".claude/**", "cookie-policy.html", "privacy-policy.html"],
+  "insertBefore": "</body>",
+  "commentSyntax": "html",
+  "cspChecked": true
+}

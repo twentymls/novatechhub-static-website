@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-09T00:00:00.000Z",
+  "title": "Design System: CatalisiLab",
+  "extensions": {
+    "colorMeta": {
+      "signal-blue": { "role": "primary", "displayName": "Signal Blue", "canonical": "oklch(0.78 0.15 220)", "tonalRamp": ["oklch(0.20 0.06 220)", "oklch(0.30 0.09 220)", "oklch(0.40 0.12 220)", "oklch(0.52 0.15 220)", "oklch(0.62 0.16 220)", "oklch(0.70 0.16 220)", "oklch(0.78 0.15 220)", "oklch(0.90 0.08 220)"] },
+      "signal-blue-deep": { "role": "primary", "displayName": "Signal Blue Deep", "canonical": "oklch(0.68 0.17 220)", "tonalRamp": ["oklch(0.20 0.07 220)", "oklch(0.30 0.10 220)", "oklch(0.40 0.13 220)", "oklch(0.50 0.15 220)", "oklch(0.58 0.16 220)", "oklch(0.68 0.17 220)", "oklch(0.78 0.14 220)", "oklch(0.88 0.08 220)"] },
+      "midnight-ink": { "role": "neutral", "displayName": "Midnight Ink", "canonical": "oklch(0.16 0.015 255)", "tonalRamp": ["oklch(0.16 0.015 255)", "oklch(0.19 0.018 255)", "oklch(0.22 0.02 255)", "oklch(0.30 0.015 255)", "oklch(0.45 0.014 255)", "oklch(0.58 0.012 85)", "oklch(0.78 0.012 85)", "oklch(0.97 0.008 85)"] },
+      "warm-white": { "role": "neutral", "displayName": "Warm White", "canonical": "oklch(0.97 0.008 85)", "tonalRamp": ["oklch(0.18 0.015 255)", "oklch(0.30 0.015 255)", "oklch(0.45 0.014 255)", "oklch(0.58 0.012 85)", "oklch(0.70 0.012 85)", "oklch(0.78 0.012 85)", "oklch(0.90 0.010 85)", "oklch(0.97 0.008 85)"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "oklch(0.965 0.008 85)", "tonalRamp": ["oklch(0.18 0.015 255)", "oklch(0.25 0.015 255)", "oklch(0.45 0.015 255)", "oklch(0.70 0.012 85)", "oklch(0.85 0.012 85)", "oklch(0.92 0.012 85)", "oklch(0.945 0.010 85)", "oklch(0.965 0.008 85)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only. Instrument Serif, words rise on load with a Signal Blue underline draw on the accent word." },
+      "headline": { "displayName": "Headline", "purpose": "Section h2, footer brand line, CTA block. Italic Signal Blue emphasis words." },
+      "title": { "displayName": "Title", "purpose": "Service-cell titles, method step names, blog and article titles." },
+      "body": { "displayName": "Body", "purpose": "All reading copy. Inter; steps to 14-15px Muted Warm for ledes and descriptions." },
+      "label": { "displayName": "Label", "purpose": "Section markers, eyebrow, marquee label, contact/footer labels. JetBrains Mono, uppercase, tracked." }
+    },
+    "shadows": [
+      { "name": "hover-bloom", "value": "radial-gradient(600px circle at var(--mx) var(--my), oklch(0.78 0.15 220 / 0.08), transparent 40%)", "purpose": "Cursor-tracked blue wash on service cells and hero. The interactive light source." },
+      { "name": "scroll-progress-glow", "value": "0 0 12px oklch(0.78 0.15 220 / 0.6)", "purpose": "The 2px top scroll-progress bar; the only persistent glow." },
+      { "name": "ambient-orb", "value": "filter: blur(80px); opacity: 0.35", "purpose": "Two large slow-drifting Signal Blue / indigo orbs behind content. Atmospheric depth, never interactive." }
+    ],
+    "motion": [
+      { "name": "ease-signature", "value": "cubic-bezier(0.2, 0.7, 0.2, 1)", "purpose": "The house ease-out. Hover lifts, reveals, arrow nudges, drawer slide." },
+      { "name": "ease-ambient", "value": "cubic-bezier(0.4, 0, 0.6, 1)", "purpose": "Slow looping ambient motion: orb drift, hero orb drift." },
+      { "name": "duration-state", "value": "0.2s - 0.25s", "purpose": "Color and border state changes (links, buttons, inputs)." },
+      { "name": "duration-move", "value": "0.4s - 0.5s", "purpose": "Hover lifts, transforms, glow fades." },
+      { "name": "duration-reveal", "value": "0.9s", "purpose": "Scroll-reveal entrances (opacity + translateY 32px), staggered in 0.08s steps." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "980px" },
+      { "name": "mobile", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Highest-priority action. Warm-white pill that fills Signal Blue with a shimmer sweep on hover.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Parliamoci<svg class=\"ds-arrow\" viewBox=\"0 0 14 14\" fill=\"none\"><path d=\"M3 11L11 3M11 3H5M11 3v6\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 12px; padding: 16px 24px; background: oklch(0.97 0.008 85); color: oklch(0.16 0.015 255); border: 1px solid oklch(0.97 0.008 85); border-radius: 999px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; text-decoration: none; position: relative; overflow: hidden; transition: background 0.25s, border-color 0.25s; } .ds-btn-primary::before { content: ''; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, oklch(1 0 0 / 0.25) 50%, transparent 70%); transform: translateX(-120%); transition: transform 0.7s cubic-bezier(0.2,0.7,0.2,1); pointer-events: none; } .ds-btn-primary:hover { background: oklch(0.78 0.15 220); border-color: oklch(0.78 0.15 220); } .ds-btn-primary:hover::before { transform: translateX(120%); } .ds-btn-primary .ds-arrow { width: 14px; height: 14px; transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1); } .ds-btn-primary:hover .ds-arrow { transform: translate(2px,-2px); } .ds-btn-primary:focus-visible { outline: 2px solid oklch(0.78 0.15 220); outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Lower-priority action beside Primary. Transparent with a hairline border that brightens on hover.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Scopri i servizi<svg class=\"ds-arrow\" viewBox=\"0 0 14 14\" fill=\"none\"><path d=\"M3 11L11 3M11 3H5M11 3v6\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; gap: 12px; padding: 16px 24px; background: transparent; color: oklch(0.97 0.008 85); border: 1px solid oklch(0.30 0.015 255 / 0.5); border-radius: 999px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; text-decoration: none; transition: border-color 0.25s; } .ds-btn-secondary:hover { border-color: oklch(0.97 0.008 85); } .ds-btn-secondary .ds-arrow { width: 14px; height: 14px; transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1); } .ds-btn-secondary:hover .ds-arrow { transform: translate(2px,-2px); } .ds-btn-secondary:focus-visible { outline: 2px solid oklch(0.78 0.15 220); outline-offset: 3px; }"
+    },
+    {
+      "name": "Nav CTA",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Persistent navbar call to action. Warm-white pill with a pulsing Signal Blue dot and a glow that blooms on hover.",
+      "html": "<a class=\"ds-nav-cta\" href=\"#\"><span class=\"ds-dot\"></span>Iniziamo</a>",
+      "css": ".ds-nav-cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; background: oklch(0.97 0.008 85); color: oklch(0.16 0.015 255); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; position: relative; transition: background 0.2s; } .ds-nav-cta .ds-dot { width: 6px; height: 6px; border-radius: 50%; background: oklch(0.78 0.15 220); animation: ds-pulse 2s infinite; } .ds-nav-cta::before { content: ''; position: absolute; inset: -3px; border-radius: inherit; background: radial-gradient(circle, oklch(0.78 0.15 220), transparent 70%); opacity: 0; z-index: -1; filter: blur(10px); transition: opacity 0.4s; } .ds-nav-cta:hover { background: oklch(0.78 0.15 220); color: oklch(0.16 0.015 255); } .ds-nav-cta:hover .ds-dot { background: oklch(0.16 0.015 255); } .ds-nav-cta:hover::before { opacity: 0.5; } @keyframes ds-pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Contact-form field. Raised-ink fill, hairline border that turns Signal Blue on focus.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label-field\" for=\"ds-email\">Email *</label><input class=\"ds-input\" id=\"ds-email\" type=\"email\" placeholder=\"la-tua@email.com\"></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; } .ds-label-field { font-family: 'Inter', sans-serif; font-size: 13px; color: oklch(0.78 0.012 85); margin-bottom: 6px; } .ds-input { width: 100%; padding: 14px 16px; background: oklch(0.19 0.018 255); border: 1px solid oklch(0.30 0.015 255 / 0.5); border-radius: 12px; color: oklch(0.97 0.008 85); font-family: 'Inter', sans-serif; font-size: 14px; outline: none; transition: border-color 0.2s; } .ds-input::placeholder { color: oklch(0.58 0.012 85); } .ds-input:focus { border-color: oklch(0.78 0.15 220); }"
+    },
+    {
+      "name": "Capability Tag",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Small pill labelling a service capability or blog category. Hairline border, muted text.",
+      "html": "<span class=\"ds-chip\">E-commerce</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; font-family: 'Inter', sans-serif; font-size: 11px; padding: 4px 10px; border: 1px solid oklch(0.30 0.015 255 / 0.5); border-radius: 999px; color: oklch(0.78 0.012 85); transition: border-color 0.3s; } .ds-chip:hover { border-color: oklch(0.78 0.15 220 / 0.4); }"
+    },
+    {
+      "name": "Service Cell",
+      "kind": "card",
+      "refersTo": "button-secondary",
+      "description": "A cell in the bordered services grid (not a floating card). Lifts and blooms Signal Blue on hover; corner arrow ring fills.",
+      "html": "<a class=\"ds-svc\" href=\"#\" style=\"--mx:50%;--my:50%\"><div class=\"ds-svc-num\">01</div><h3 class=\"ds-svc-title\">Siti web &amp; <em>e-commerce</em></h3><p class=\"ds-svc-desc\">Siti e applicazioni web performanti, responsive e ottimizzate SEO. Architetture scalabili e integrazioni su misura.</p><div class=\"ds-svc-arrow\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\"><path d=\"M3 11L11 3M11 3H5M11 3v6\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></div></a>",
+      "css": ".ds-svc { position: relative; display: flex; flex-direction: column; min-height: 320px; padding: 40px 32px 36px; border: 1px solid oklch(0.30 0.015 255 / 0.25); background: oklch(0.16 0.015 255); text-decoration: none; overflow: hidden; transition: transform 0.5s cubic-bezier(0.2,0.7,0.2,1), border-color 0.4s, background 0.4s; } .ds-svc::before { content: ''; position: absolute; inset: 0; background: radial-gradient(600px circle at var(--mx) var(--my), oklch(0.78 0.15 220 / 0.08), transparent 40%); opacity: 0; transition: opacity 0.4s; pointer-events: none; } .ds-svc:hover { background: oklch(0.22 0.02 255); border-color: oklch(0.78 0.15 220 / 0.35); transform: translateY(-4px); } .ds-svc:hover::before { opacity: 1; } .ds-svc-num { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: oklch(0.58 0.012 85); transition: color 0.4s, transform 0.4s cubic-bezier(0.2,0.7,0.2,1); } .ds-svc:hover .ds-svc-num { color: oklch(0.78 0.15 220); transform: scale(1.15); } .ds-svc-title { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 32px; line-height: 1.05; letter-spacing: -0.015em; margin: 60px 0 0; color: oklch(0.97 0.008 85); } .ds-svc-title em { font-style: italic; color: oklch(0.78 0.15 220); } .ds-svc-desc { color: oklch(0.78 0.012 85); font-size: 14px; line-height: 1.6; margin-top: 16px; } .ds-svc-arrow { position: absolute; top: 32px; right: 32px; width: 36px; height: 36px; border-radius: 50%; border: 1px solid oklch(0.30 0.015 255 / 0.5); display: grid; place-items: center; color: oklch(0.97 0.008 85); opacity: 0.4; transition: all 0.4s cubic-bezier(0.2,0.7,0.2,1); } .ds-svc:hover .ds-svc-arrow { background: oklch(0.78 0.15 220); border-color: oklch(0.78 0.15 220); color: oklch(0.16 0.015 255); transform: translate(6px,-6px); opacity: 1; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Instrument",
+    "overview": "CatalisiLab is a Sicilian digital studio, and its surface behaves like a well-made instrument: precise, dark, and quietly confident, with one source of light. The body is a deep blue-black ink; a single Signal Blue is the only chromatic voice, and an Instrument Serif headline carries the warmth. Nothing shouts. Expertise is communicated through restraint, exact geometry, and motion that answers the cursor rather than performing for it. The system runs as two worlds: most of the page lives in the dark, and two moments (the Method section and the closing CTA) invert to a warm paper as a deliberate pacing device. Depth is tonal, not shadowed, and a soft radial glow of Signal Blue is the only ambient light.",
+    "keyCharacteristics": [
+      "Dark by default; two warm paper sections as deliberate inversions.",
+      "One accent (Signal Blue) and one accent only. Its rarity is the point.",
+      "Serif headlines with italic, blue emphasis words; sans body; mono labels.",
+      "Depth through tonal layering and glow, not drop shadows.",
+      "Motion that responds to the cursor (hover lift, radial bloom, shimmer sweep)."
+    ],
+    "rules": [
+      { "name": "The One Light Rule", "body": "Signal Blue is the only chromatic color in the system. No secondary brand hue, no success-green, no warning-amber as decoration. Everything else is ink and warm-white. The blue earns its meaning by being the only thing that is colored.", "section": "colors" },
+      { "name": "The Warmth-Without-Tint Rule", "body": "The brand reads warm through the warm-white type ramp (hue 85) and the two paper inversions, never through a tinted background. The dark background stays a cool blue-black.", "section": "colors" },
+      { "name": "The Italic-Accent Rule", "body": "Emphasis inside a heading is italic AND colored Signal Blue. Use it for the one or two words that carry the meaning of a heading, never a whole phrase, and never on body copy.", "section": "typography" },
+      { "name": "The Mono-Is-a-Label Rule", "body": "JetBrains Mono appears only as small uppercase labels and section markers, never for body copy or headings.", "section": "typography" },
+      { "name": "The No-Dark-Shadow Rule", "body": "Surfaces never cast a grey/black drop shadow. To read as raised, step the background tone up and/or add a hairline border. Light in this system is blue and additive.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Signal Blue as the single accent; switch to Signal Blue Deep only on the warm paper worlds for contrast.",
+      "Do express heading emphasis with the Italic-Accent move: italic + Signal Blue on one or two words.",
+      "Do build depth by stepping background tone (midnight-ink to raised-ink to elevated-ink) and adding hairline borders.",
+      "Do use the two paper inversions (Method, CTA) as deliberate pacing beats; don't add a third without a narrative reason.",
+      "Do keep body and placeholder text at Muted Warm or brighter; reserve Faint Warm for short labels and metadata.",
+      "Do ship every animation with the prefers-reduced-motion fallback already in the stylesheet.",
+      "Do keep reading measures tight: ledes ~52ch, prose in a 720px column."
+    ],
+    "donts": [
+      "Don't introduce a second accent hue, a success-green, or a gradient. One light only.",
+      "Don't warm the dark background to feel approachable; warmth comes from the type ramp, paper worlds, and copy. A warm-tinted near-white body is the generic-SaaS / cheap-agency move this brand rejects.",
+      "Don't add grey or black drop shadows under cards or buttons; light is additive blue glow.",
+      "Don't use floating, identical icon-heading-text card grids. Services are bordered grid cells.",
+      "Don't set JetBrains Mono on body copy or headings; mono is for small uppercase labels only.",
+      "Don't drift toward enterprise/corporate sterility: no blue-suit stock photography, no jargon, no buzzwords.",
+      "Don't set body copy in ALL CAPS; reserve uppercase for mono labels and section markers."
+    ]
+  }
+}
