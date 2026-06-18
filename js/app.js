@@ -198,20 +198,67 @@
   });
 
   // ==========================================
-  // 11. Contact form (honeypot + disable)
+  // 11. Contact form (AJAX submit: loading / success / error)
   // ==========================================
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    const errorBox = document.getElementById('form-error');
+    const successBox = document.getElementById('contact-success');
+    const successMsg = document.getElementById('contact-success-msg');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const btnLabel = submitBtn && submitBtn.querySelector('.btn-label');
+
+    const showError = (msg) => {
+      if (errorBox) { errorBox.textContent = msg; errorBox.hidden = false; }
+      if (submitBtn) { submitBtn.disabled = false; }
+      if (btnLabel) { btnLabel.textContent = 'Invia messaggio'; }
+    };
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Honeypot: silently drop bot submissions.
       const honeypot = contactForm.querySelector('[data-honeypot]');
-      if (honeypot && honeypot.value !== '') {
-        e.preventDefault();
-        return;
-      }
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Invio in corso...';
+      if (honeypot && honeypot.value !== '') return;
+
+      if (errorBox) { errorBox.hidden = true; errorBox.textContent = ''; }
+      if (submitBtn) submitBtn.disabled = true;
+      if (btnLabel) btnLabel.textContent = 'Invio in corso...';
+
+      try {
+        const data = new FormData(contactForm);
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          const name = (data.get('name') || '').toString().trim();
+          if (successMsg) {
+            successMsg.textContent = name
+              ? `Grazie ${name}. Ti rispondiamo entro 24 ore lavorative.`
+              : 'Grazie. Ti rispondiamo entro 24 ore lavorative.';
+          }
+          contactForm.style.display = 'none';
+          if (successBox) {
+            successBox.hidden = false;
+            successBox.classList.add('show');
+            successBox.focus();
+            successBox.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+          }
+        } else {
+          let msg = 'Invio non riuscito. Riprova, oppure scrivici a info@catalisilab.com.';
+          try {
+            const json = await res.json();
+            if (json && Array.isArray(json.errors) && json.errors.length) {
+              msg = json.errors.map(x => x.message).join(' ');
+            }
+          } catch (_) { /* keep default message */ }
+          showError(msg);
+        }
+      } catch (_) {
+        showError('Problema di rete. Controlla la connessione e riprova, oppure scrivici a info@catalisilab.com.');
       }
     });
   }
