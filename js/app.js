@@ -1,33 +1,6 @@
 (() => {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ===== DEBUG DIAGNOSTICS — rimuovere dopo aver risolto il problema form =====
-  const DIAG = (msg, color) => {
-    try {
-      let box = document.getElementById('__diag');
-      if (!box) {
-        box = document.createElement('div');
-        box.id = '__diag';
-        box.style.cssText = 'position:fixed;bottom:8px;left:8px;right:8px;z-index:99999;max-height:45vh;overflow:auto;background:#111;color:#0f0;font:12px/1.5 monospace;padding:10px 12px;border-radius:6px;white-space:pre-wrap;box-shadow:0 4px 24px rgba(0,0,0,.5)';
-        (document.body || document.documentElement).appendChild(box);
-        const close = document.createElement('button');
-        close.textContent = '× chiudi';
-        close.style.cssText = 'position:absolute;top:6px;right:8px;background:none;border:1px solid #555;color:#aaa;font:11px monospace;cursor:pointer;padding:2px 6px;border-radius:4px';
-        close.onclick = () => box.remove();
-        box.appendChild(close);
-      }
-      const line = document.createElement('div');
-      line.textContent = new Date().toLocaleTimeString() + '  ' + msg;
-      if (color) line.style.color = color;
-      box.appendChild(line);
-    } catch (_) { /* ignore */ }
-    try { console.log('[DIAG]', msg); } catch (_) {}
-  };
-  window.addEventListener('error', (e) => DIAG('JS ERROR: ' + (e.message || (e.error && e.error.message) || e.error) + '  @ ' + (e.filename || '?') + ':' + (e.lineno || '?'), '#ff5555'));
-  window.addEventListener('unhandledrejection', (e) => DIAG('PROMISE REJECT: ' + (e.reason && (e.reason.message || e.reason)), '#ff5555'));
-  DIAG('app.js eseguito ✓  (UA: ' + navigator.userAgent.slice(0, 60) + '...)');
-  // ===== /DEBUG =====
-
   // ==========================================
   // 1. Inject decorative elements
   // ==========================================
@@ -241,24 +214,30 @@
       if (btnLabel) { btnLabel.textContent = 'Invia messaggio'; }
     };
 
-    // ===== DEBUG — rimuovere dopo =====
-    DIAG('contact-form trovato, listener submit agganciato ✓', '#55ddff');
-    if (submitBtn) submitBtn.addEventListener('click', () => {
-      DIAG('CLICK sul bottone ricevuto. form.checkValidity() = ' + contactForm.checkValidity(), '#ffdd55');
-      contactForm.querySelectorAll('[required]').forEach((el) => {
-        if (!el.validity.valid) DIAG('  ⚠ campo non valido: "' + (el.name || el.id) + '" → ' + el.validationMessage, '#ffaa00');
-      });
-    });
-    contactForm.addEventListener('invalid', (e) => DIAG('VALIDAZIONE nativa blocca: "' + (e.target.name || e.target.id) + '"', '#ffaa00'), true);
-    // ===== /DEBUG =====
+    // Validate in JS so we always show a visible message — the native validation
+    // bubble can be invisible/off-screen on some browsers, making the button
+    // appear "dead" when a required field is missing.
+    contactForm.noValidate = true;
 
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      DIAG('SUBMIT handler in esecuzione → invio a ' + contactForm.action, '#55ddff');
 
       // Honeypot: silently drop bot submissions.
       const honeypot = contactForm.querySelector('[data-honeypot]');
       if (honeypot && honeypot.value !== '') return;
+
+      // Explicit, visible validation.
+      if (!contactForm.checkValidity()) {
+        const firstInvalid = contactForm.querySelector(':invalid');
+        const checkbox = contactForm.querySelector('#privacy');
+        if (checkbox && !checkbox.checked) {
+          showError('Per inviare devi accettare la Privacy Policy.');
+        } else {
+          showError('Controlla i campi obbligatori: nome, email valida e messaggio.');
+        }
+        if (firstInvalid && firstInvalid.focus) firstInvalid.focus();
+        return;
+      }
 
       if (errorBox) { errorBox.hidden = true; errorBox.textContent = ''; }
       if (submitBtn) submitBtn.disabled = true;
@@ -274,7 +253,6 @@
           headers: { 'Accept': 'application/json' },
           signal: controller.signal
         });
-        DIAG('Risposta ricevuta da formspree: HTTP ' + res.status, res.ok ? '#55ff55' : '#ffaa00');
 
         if (res.ok) {
           const name = (data.get('name') || '').toString().trim();
@@ -301,7 +279,6 @@
           showError(msg);
         }
       } catch (err) {
-        DIAG('FETCH fallito: ' + (err && err.name === 'AbortError' ? 'TIMEOUT 15s — richiesta mai risposta (bloccata?)' : (err && err.message || err)), '#ff5555');
         console.warn('[contact-form] submit failed:', err && err.name === 'AbortError' ? 'timeout (15s) — request never responded' : err);
         showError(err && err.name === 'AbortError'
           ? 'Invio scaduto: la richiesta non ha risposto in tempo. Riprova, oppure scrivici a info@catalisilab.com.'
