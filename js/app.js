@@ -287,6 +287,25 @@
         clearTimeout(timeout);
       }
     });
+
+    // Robustness: some security/monitoring agents (DLP, "secure" enterprise
+    // browsers, session-replay) intercept the native button→submit path so a
+    // click on the button never turns into a form submit. Bind the click
+    // directly (capture phase, to run before such interceptors) and drive the
+    // submission ourselves via requestSubmit(), which fires the 'submit' event
+    // handler above. preventDefault avoids a double submit from the native path.
+    if (submitBtn) {
+      submitBtn.addEventListener('click', (e) => {
+        if (submitBtn.disabled) return;
+        e.preventDefault();
+        if (typeof contactForm.requestSubmit === 'function') {
+          contactForm.requestSubmit();
+        } else {
+          // Older browsers without requestSubmit: fire the submit event manually.
+          contactForm.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+        }
+      }, true);
+    }
   }
 
   // ==========================================
