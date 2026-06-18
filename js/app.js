@@ -225,12 +225,15 @@
       if (submitBtn) submitBtn.disabled = true;
       if (btnLabel) btnLabel.textContent = 'Invio in corso...';
 
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 15000);
       try {
         const data = new FormData(contactForm);
         const res = await fetch(contactForm.action, {
           method: 'POST',
           body: data,
-          headers: { 'Accept': 'application/json' }
+          headers: { 'Accept': 'application/json' },
+          signal: controller.signal
         });
 
         if (res.ok) {
@@ -257,8 +260,13 @@
           } catch (_) { /* keep default message */ }
           showError(msg);
         }
-      } catch (_) {
-        showError('Problema di rete. Controlla la connessione e riprova, oppure scrivici a info@catalisilab.com.');
+      } catch (err) {
+        console.warn('[contact-form] submit failed:', err && err.name === 'AbortError' ? 'timeout (15s) — request never responded' : err);
+        showError(err && err.name === 'AbortError'
+          ? 'Invio scaduto: la richiesta non ha risposto in tempo. Riprova, oppure scrivici a info@catalisilab.com.'
+          : 'Problema di rete. Controlla la connessione e riprova, oppure scrivici a info@catalisilab.com.');
+      } finally {
+        clearTimeout(timeout);
       }
     });
   }
