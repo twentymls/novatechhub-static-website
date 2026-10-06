@@ -649,6 +649,17 @@ section.design-section { padding: 120px 0; position: relative; }
 .contact-form ::placeholder { color: oklch(0.64 0.012 85); opacity: 1; }
 .contact-form textarea { resize: vertical; min-height: 120px; }
 .contact-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.contact-form .phone-control {
+  display: grid; grid-template-columns: minmax(136px, 0.8fr) minmax(0, 1.2fr); gap: 8px;
+}
+.contact-form .phone-control select,
+.contact-form .phone-control input { min-width: 0; }
+.contact-form .field-hint { margin-top: 6px; font-size: 12px; color: var(--ink-3); }
+.contact-form .form-honeypot {
+  position: absolute !important; width: 1px !important; height: 1px !important;
+  overflow: hidden !important; clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important; white-space: nowrap !important;
+}
 .contact-form .privacy-check { display: flex; align-items: start; gap: 10px; font-size: 13px; color: var(--ink-2); }
 .contact-form .privacy-check input[type="checkbox"] {
   width: 18px; height: 18px; margin-top: 2px;
@@ -828,6 +839,7 @@ footer.design-footer { padding: 96px 0 32px; border-top: 1px solid var(--line-2)
   .marquee-label { position: static; transform: none; display: block; text-align: center; margin-bottom: 16px; padding-right: 0; }
   .marquee-track { padding-left: 0; }
   .contact-form .form-row { grid-template-columns: 1fr; }
+  .contact-form .phone-control { grid-template-columns: minmax(126px, 0.8fr) minmax(0, 1.2fr); }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
 }
 

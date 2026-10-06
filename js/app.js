@@ -207,6 +207,8 @@
     const successMsg = document.getElementById('contact-success-msg');
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     const btnLabel = submitBtn && submitBtn.querySelector('.btn-label');
+    const phonePrefix = contactForm.querySelector('#phone_prefix');
+    const phoneInput = contactForm.querySelector('#phone');
 
     const showError = (msg) => {
       if (errorBox) { errorBox.textContent = msg; errorBox.hidden = false; }
@@ -219,6 +221,26 @@
     // appear "dead" when a required field is missing.
     contactForm.noValidate = true;
 
+    const getPhoneValue = () => {
+      if (!phonePrefix || !phoneInput) return '';
+
+      const prefix = phonePrefix.value.trim();
+      const localDigits = phoneInput.value.replace(/\D/g, '');
+      const prefixDigits = prefix.replace(/\D/g, '');
+      const isValid = /^\+\d{1,4}$/.test(prefix)
+        && localDigits.length >= 6
+        && (prefixDigits.length + localDigits.length) <= 15;
+
+      phoneInput.setCustomValidity(isValid
+        ? ''
+        : 'Inserisci un numero valido completo di prefisso internazionale.');
+
+      return isValid ? `${prefix} ${localDigits}` : '';
+    };
+
+    if (phoneInput) phoneInput.addEventListener('input', getPhoneValue);
+    if (phonePrefix) phonePrefix.addEventListener('change', getPhoneValue);
+
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
@@ -226,14 +248,18 @@
       const honeypot = contactForm.querySelector('[data-honeypot]');
       if (honeypot && honeypot.value !== '') return;
 
+      // Normalize and validate the full international phone number.
+      const fullPhone = getPhoneValue();
+
       // Explicit, visible validation.
       if (!contactForm.checkValidity()) {
         const firstInvalid = contactForm.querySelector(':invalid');
-        const checkbox = contactForm.querySelector('#privacy');
-        if (checkbox && !checkbox.checked) {
+        if (firstInvalid && firstInvalid.id === 'privacy') {
           showError('Per inviare devi accettare la Privacy Policy.');
+        } else if (firstInvalid && (firstInvalid.id === 'phone' || firstInvalid.id === 'phone_prefix')) {
+          showError('Inserisci un numero di telefono valido e seleziona il prefisso internazionale.');
         } else {
-          showError('Controlla i campi obbligatori: nome, email valida e messaggio.');
+          showError('Controlla i campi obbligatori: nome, email valida, tipo di progetto e messaggio.');
         }
         if (firstInvalid && firstInvalid.focus) firstInvalid.focus();
         return;
@@ -247,6 +273,10 @@
       const timeout = setTimeout(() => controller.abort(), 15000);
       try {
         const data = new FormData(contactForm);
+        if (fullPhone) {
+          data.set('phone', fullPhone);
+          data.delete('phone_prefix');
+        }
         const res = await fetch(contactForm.action, {
           method: 'POST',
           body: data,

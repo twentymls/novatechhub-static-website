@@ -460,34 +460,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div>
         <form id="contact-form" action="https://formspree.io/f/mqewvpna" method="POST" class="contact-form">
-          <div style="position:absolute;left:-9999px" aria-hidden="true">
-            <input type="text" name="honeypot_field" tabindex="-1" autocomplete="off" data-honeypot>
+          <div class="form-honeypot" aria-hidden="true">
+            <label for="contact-website">Lascia vuoto questo campo</label>
+            <input type="text" name="_gotcha" id="contact-website" tabindex="-1" autocomplete="off" data-honeypot>
           </div>
           <input type="hidden" name="source_page" value="home">
           <div class="form-row">
             <div>
               <label for="name">Nome *</label>
-              <input type="text" name="name" id="name" required placeholder="Il tuo nome">
+              <input type="text" name="name" id="name" required minlength="2" maxlength="80" autocomplete="name" placeholder="Il tuo nome">
             </div>
             <div>
               <label for="email">Email *</label>
-              <input type="email" name="email" id="email" required placeholder="la-tua@email.com">
+              <input type="email" name="email" id="email" required maxlength="254" autocomplete="email" placeholder="la-tua@email.com">
             </div>
           </div>
           <div class="form-row">
             <div>
               <label for="company">Azienda</label>
-              <input type="text" name="company" id="company" placeholder="Nome azienda">
+              <input type="text" name="company" id="company" maxlength="120" autocomplete="organization" placeholder="Nome azienda">
             </div>
-            <div>
-              <label for="phone">Telefono</label>
-              <input type="tel" name="phone" id="phone" placeholder="+39 ...">
+            <div class="phone-field">
+              <label for="phone">Telefono *</label>
+              <div class="phone-control">
+                <select name="phone_prefix" id="phone_prefix" required autocomplete="tel-country-code" aria-label="Prefisso internazionale">
+                  <option value="+39" selected>Italia +39</option>
+                  <option value="+355">Albania +355</option>
+                  <option value="+43">Austria +43</option>
+                  <option value="+32">Belgio +32</option>
+                  <option value="+55">Brasile +55</option>
+                  <option value="+1">Canada/USA +1</option>
+                  <option value="+971">Emirati Arabi Uniti +971</option>
+                  <option value="+33">Francia +33</option>
+                  <option value="+49">Germania +49</option>
+                  <option value="+30">Grecia +30</option>
+                  <option value="+353">Irlanda +353</option>
+                  <option value="+356">Malta +356</option>
+                  <option value="+31">Paesi Bassi +31</option>
+                  <option value="+48">Polonia +48</option>
+                  <option value="+351">Portogallo +351</option>
+                  <option value="+44">Regno Unito +44</option>
+                  <option value="+40">Romania +40</option>
+                  <option value="+378">San Marino +378</option>
+                  <option value="+34">Spagna +34</option>
+                  <option value="+41">Svizzera +41</option>
+                </select>
+                <input type="tel" name="phone" id="phone" required inputmode="tel" autocomplete="tel-national" minlength="6" maxlength="20" pattern="[0-9 \(\)\-]{6,20}" title="Inserisci almeno 6 cifre; puoi usare spazi, parentesi o trattini." aria-describedby="phone-hint" placeholder="380 134 2172">
+              </div>
+              <p class="field-hint" id="phone-hint">Seleziona il prefisso e inserisci il numero.</p>
             </div>
           </div>
           <div>
-            <label for="project_type">Tipo di progetto</label>
-            <select name="project_type" id="project_type">
-              <option value="">Seleziona...</option>
+            <label for="project_type">Tipo di progetto *</label>
+            <select name="project_type" id="project_type" required>
+              <option value="" selected disabled>Seleziona...</option>
               <option value="website">Sito Web</option>
               <option value="mobile_app">App Mobile</option>
               <option value="ecommerce">E-commerce</option>
@@ -498,7 +524,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div>
             <label for="message">Messaggio *</label>
-            <textarea name="message" id="message" required rows="5" placeholder="Raccontaci il tuo progetto..."></textarea>
+            <textarea name="message" id="message" required minlength="10" maxlength="2000" rows="5" placeholder="Raccontaci il tuo progetto..."></textarea>
           </div>
           <div class="privacy-check">
             <input type="checkbox" name="privacy" id="privacy" required>
