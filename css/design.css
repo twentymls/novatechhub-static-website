@@ -4,7 +4,7 @@
    ============================================ */
 
 /* ---------- FONTS ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Font stylesheets are linked in each document head to avoid an @import waterfall. */
 
 /* Metric-matched fallback to minimize layout shift while Archivo loads */
 @font-face {
@@ -34,6 +34,8 @@
   --font-display: 'Archivo', 'Archivo Fallback', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Archivo', 'Archivo Fallback', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  --font-sans: var(--font-body);
+  --default-font-family: var(--font-body);
 }
 
 /* ---------- BASE (scoped to design pages via body class) ---------- */
@@ -152,8 +154,17 @@ nav.top .wrap { display: flex; align-items: center; justify-content: space-betwe
   transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
   padding: 24px;
   display: flex; flex-direction: column;
+  visibility: hidden;
 }
-.mobile-menu.open { transform: translateX(0); }
+.mobile-menu.open { transform: translateX(0); visibility: visible; }
+/* Legacy Tailwind drawers use the same controller without changing templates. */
+#mobile-menu:not(.mobile-menu) { visibility: hidden; pointer-events: none; }
+#mobile-menu:not(.mobile-menu).open { translate: 0 0; visibility: visible; pointer-events: auto; }
+#mobile-overlay:not(.mobile-menu-overlay).open { display: block; }
+#main-nav:not(.top) img { width: auto; height: 40px; max-width: 55vw; object-fit: contain; }
+#mobile-menu:not(.mobile-menu) img { width: auto; height: 32px; max-width: calc(100% - 48px); object-fit: contain; }
+#mobile-menu:not(.mobile-menu) [data-navbar-close] { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; min-height: 40px; flex-shrink: 0; }
+#mobile-menu:not(.mobile-menu) [data-navbar-close] svg { width: 20px; height: 20px; }
 .mobile-menu-overlay {
   position: fixed; inset: 0;
   background: oklch(0 0 0 / 0.6);
@@ -511,10 +522,14 @@ section.design-section { padding: 120px 0; position: relative; }
   border-bottom: 1px solid oklch(0.85 0.015 85);
   align-items: baseline;
   transition: background 0.3s, padding-left 0.3s, padding-right 0.3s;
-  opacity: 0;
-  transform: translateX(-24px);
+  opacity: 1;
+  transform: none;
 }
-.method-step.in { opacity: 1; transform: translateX(0); }
+.method-step.in { opacity: 1; transform: none; animation: method-enter 0.65s ease both; }
+@keyframes method-enter {
+  from { opacity: 0; transform: translateX(-24px); }
+  to { opacity: 1; transform: none; }
+}
 .method-step:hover { background: oklch(0.92 0.012 85); padding-left: 24px; padding-right: 24px; }
 .method-step .num {
   font-family: var(--font-display); font-size: 64px; font-weight: 700; line-height: 1;
@@ -808,14 +823,20 @@ footer.design-footer { padding: 96px 0 32px; border-top: 1px solid var(--line-2)
 .footer-bottom a:hover { color: var(--accent); }
 
 /* ---------- SCROLL REVEAL ---------- */
+/* All copy remains readable without JavaScript, including older templates. */
+[data-scroll-reveal] { opacity: 1; translate: none; }
 .reveal {
-  opacity: 0;
-  transform: translateY(32px);
+  opacity: 1;
+  transform: none;
   transition: opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
               transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
   will-change: opacity, transform;
 }
-.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal.in { opacity: 1; transform: none; animation: reveal-enter 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+@keyframes reveal-enter {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
 .reveal.delay-1 { transition-delay: 0.08s; }
 .reveal.delay-2 { transition-delay: 0.16s; }
 .reveal.delay-3 { transition-delay: 0.24s; }
@@ -864,6 +885,7 @@ footer.design-footer { padding: 96px 0 32px; border-top: 1px solid var(--line-2)
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+  [data-scroll-reveal], .reveal, .method-step { opacity: 1; transform: none; translate: none; animation: none !important; }
 }
 
 /* ---------- RESPONSIVE ---------- */
